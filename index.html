@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" type="image/png" href="https://drive.google.com/uc?export=view&id=1P2vUrt8co4Of7WKiE06bNPoo1jxXJvA7">
+<title>Innovo Infra · Company Profile · 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --slate:#122023;
+  --deep:#080f10;
+  --aqua:#9EF3EE;
+  --blue:#208AAE;
+  --ink:#f0f4f5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{ background:var(--deep); }
+body{
+  font-family:'Poppins',sans-serif;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+#stage{
+  position:fixed;
+  inset:0;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  background:var(--slate);
+}
+#cv{
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:1;
+}
+.vig{
+  position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(8,15,16,0.85) 100%);
+}
+.sec{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  display:flex;align-items:center;justify-content:center;
+  padding:80px 80px;
+  z-index:3;
+  will-change:transform,opacity;
+  transform:scale(0.96);
+  opacity:0;
+}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:0.45em;text-transform:uppercase;
+  color:var(--aqua);
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:24px;
+}
+.el{width:28px;height:1px;background:rgba(158,243,238,0.45);}
+.mega{
+  font-weight:900;
+  font-size:clamp(64px,11vw,180px);
+  line-height:0.88;
+  letter-spacing:-0.05em;
+  text-transform:uppercase;
+  text-shadow:0 0 120px rgba(158,243,238,0.18);
+  will-change:transform,opacity;
+}
+.mega .aq{color:var(--aqua);}
+.h2{
+  font-weight:900;
+  font-size:clamp(32px,5vw,80px);
+  line-height:0.95;
+  letter-spacing:-0.04em;
+  text-transform:uppercase;
+  will-change:transform,opacity;
+}
+.h2 .aq{color:var(--aqua);}
+.h2 .bl{color:var(--blue);}
+.ghost{
+  position:absolute;
+  bottom:-40px;left:60px;right:0;
+  font-weight:900;
+  font-size:clamp(120px,22vw,360px);
+  line-height:1;letter-spacing:-0.07em;text-transform:uppercase;
+  color:rgba(158,243,238,0.04);
+  pointer-events:none;
+  white-space:nowrap;overflow:hidden;
+  z-index:0;
+  will-change:transform;
+}
+.body{
+  font-size:clamp(14px,1.1vw,17px);
+  line-height:1.62;
+  color:rgba(240,244,245,0.7);
+  max-width:55ch;
+}
+.mono{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:0.3em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);
+}
+.col-c{
+  display:flex;flex-direction:column;
+  align-items:center;text-align:center;
+  width:100%;max-width:1100px;
+  position:relative;
+}
+.col-l{
+  display:flex;flex-direction:column;
+  align-items:flex-start;
+  width:100%;max-width:1400px;
+  position:relative;
+}
+.sec.align-top { align-items: flex-start; }
+.sec.align-bottom { align-items: flex-end; }
+.sec.align-left { justify-content: flex-start; }
+.sec.align-right { justify-content: flex-end; }
+.fs-xs { font-size: 0.7em !important; }
+.fs-sm { font-size: 0.85em !important; }
+.fs-lg { font-size: 1.25em !important; }
+.fs-xl { font-size: 1.5em !important; }
+.phrase {
+  display: inline-block;
+  will-change: opacity, transform;
+}
+.ini{
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;align-items:center;
+  width:100%;max-width:1380px;
+}
+.ini.r{grid-template-columns:1fr 1.1fr;}
+.ini.r .media{order:2;}.ini.r .body-side{order:1;}
+.media{
+  position:relative;aspect-ratio:16/10;
+  background:#071012;overflow:hidden;
+  border:1px solid rgba(158,243,238,0.1);
+  box-shadow:0 24px 70px -16px rgba(0,0,0,0.7);
+  will-change:transform,opacity;
+}
+.media iframe,.media img{
+  position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:cover;
+}
+.itag{
+  position:absolute;top:12px;left:12px;z-index:5;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;letter-spacing:0.22em;text-transform:uppercase;
+  background:rgba(8,15,16,0.88);
+  border:1px solid rgba(158,243,238,0.28);
+  color:var(--aqua);padding:4px 10px;
+}
+.body-side{will-change:transform,opacity;}
+.inum{
+  font-family:'JetBrains Mono',monospace;
+  font-size:10px;letter-spacing:0.35em;text-transform:uppercase;
+  color:var(--aqua);margin-bottom:12px;
+}
+.ititle{
+  font-weight:800;
+  font-size:clamp(20px,2.4vw,38px);
+  line-height:1.05;letter-spacing:-0.025em;
+  margin-bottom:14px;
+}
+.idesc{
+  font-size:14px;line-height:1.6;
+  color:rgba(240,244,245,0.7);max-width:46ch;margin-bottom:18px;
+}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.met{border-top:1px solid rgba(255,255,255,0.07);padding-top:8px;}
+.mk{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.36);}
+.mv{font-size:13px;font-weight:600;color:var(--aqua);margin-top:2px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;width:100%;max-width:1300px;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:36px;width:100%;max-width:1300px;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;width:100%;max-width:1400px;}
+.card{border-top:1px solid rgba(158,243,238,0.2);padding-top:20px;}
+.cid{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--aqua);margin-bottom:10px;}
+.ctitle{font-weight:700;font-size:16px;margin-bottom:8px;text-transform:uppercase;letter-spacing:-0.01em;}
+.cbody{font-size:13px;line-height:1.5;color:rgba(240,244,245,0.62);}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;width:100%;max-width:1200px;}
+.sc{border:1px solid rgba(158,243,238,0.12);background:rgba(18,32,35,0.5);padding:28px 24px;}
+.sn{font-size:clamp(32px,4vw,64px);font-weight:900;letter-spacing:-0.04em;color:var(--aqua);line-height:1;margin-bottom:8px;}
+.sl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.42);}
+.b3{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:44px;width:100%;max-width:1100px;}
+.b3i{padding:36px;border-right:1px solid rgba(255,255,255,0.06);text-align:center;}
+.b3i:last-child{border-right:none;}
+.b3n{font-size:clamp(44px,6.5vw,100px);font-weight:900;letter-spacing:-0.05em;color:var(--aqua);line-height:1;text-shadow:0 0 60px rgba(158,243,238,0.25);}
+.b3l{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.42);margin-top:12px;}
+.vtbl{width:100%;max-width:1200px;margin-top:30px;border-collapse:collapse;}
+.vtbl th{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.32);padding:7px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.07);}
+.vtbl td{padding:9px 14px;font-size:13px;color:rgba(240,244,245,0.76);border-bottom:1px solid rgba(255,255,255,0.04);}
+.vtbl td:first-child{font-weight:600;color:var(--ink);}
+.vtbl .aq{color:var(--aqua);font-weight:600;}
+.tl{margin-top:32px;padding-left:24px;position:relative;width:100%;max-width:880px;}
+.tl::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--aqua),transparent);}
+.tli{padding:0 0 24px 24px;position:relative;}
+.tli::before{content:"";position:absolute;left:-24px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--slate);border:2px solid var(--aqua);}
+.tlh{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:var(--aqua);margin-bottom:3px;}
+.tlb{font-size:13px;line-height:1.5;color:rgba(240,244,245,0.72);}
+.srow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:36px;position:relative;width:100%;max-width:1200px;}
+.srow::before{content:"";position:absolute;left:14px;right:14px;top:13px;height:1px;background:linear-gradient(to right,transparent,rgba(158,243,238,0.35),transparent);}
+.si{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 4px;}
+.sd{width:26px;height:26px;border-radius:50%;background:var(--deep);border:1px solid rgba(158,243,238,0.45);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:8px;color:var(--aqua);margin-bottom:10px;position:relative;z-index:2;}
+.sn2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.03em;margin-bottom:4px;}
+.sd2{font-size:9px;color:rgba(240,244,245,0.45);line-height:1.3;}
+.swg{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:32px;width:100%;max-width:1100px;}
+.swc{border:1px solid rgba(158,243,238,0.14);background:rgba(32,138,174,0.07);padding:24px 28px;}
+.swc.a{background:rgba(45,157,191,0.09);}
+.swt{font-size:16px;font-weight:800;text-transform:uppercase;color:var(--aqua);margin-bottom:12px;letter-spacing:-0.01em;}
+.swl{list-style:none;}
+.swl li{font-size:13px;line-height:1.55;padding-left:11px;position:relative;color:rgba(240,244,245,0.73);}
+.swl li::before{content:"·";position:absolute;left:0;color:var(--aqua);font-weight:900;}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;}
+.pill{border:1px solid rgba(158,243,238,0.18);padding:9px 16px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(240,244,245,0.65);}
+.hint{
+  position:absolute;bottom:64px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:9px;letter-spacing:0.4em;text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+  pointer-events:none;
+}
+.harrow{width:1px;height:36px;background:linear-gradient(to bottom,rgba(158,243,238,0.5),transparent);animation:hp 2s ease infinite;}
+@keyframes hp{0%,100%{opacity:1;transform:scaleY(1);}50%{opacity:0.3;transform:scaleY(0.5);}}
+.hd{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:22px 44px;}
+.hdb{font-weight:700;font-size:12px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.85);}
+.hdr{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.38);display:flex;align-items:center;gap:18px;}
+.hpb{width:72px;height:1px;background:rgba(255,255,255,0.1);position:relative;overflow:hidden;}
+.hpf{position:absolute;left:0;top:0;height:100%;background:var(--aqua);width:0%;transition:width 0.3s ease;}
+.ft{position:fixed;bottom:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:flex-end;padding:22px 44px;pointer-events:none;}
+.ftl,.ftr{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(255,255,255,0.28);}
+.turl{font-size:18px;font-weight:500;color:var(--aqua);margin-top:24px;}
+.tloc{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:rgba(255,255,255,0.36);margin-top:36px;}
+.vf{width:100%;max-width:1060px;aspect-ratio:16/9;position:relative;border:1px solid rgba(158,243,238,0.14);background:#000;overflow:hidden;box-shadow:0 36px 90px -16px rgba(0,0,0,0.7);margin-top:28px;}
+.vf iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.ldr{position:fixed;inset:0;z-index:9999;background:var(--deep);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.9s,visibility 0.9s;}
+.ldr.gone{opacity:0;visibility:hidden;pointer-events:none;}
+.lw{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:0.5em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px;}
+.lb{width:200px;height:1px;background:rgba(255,255,255,0.07);position:relative;overflow:hidden;}
+.lb::after{content:"";position:absolute;left:0;top:0;height:100%;background:var(--aqua);animation:fill 1.8s ease forwards;}
+@keyframes fill{to{width:100%;}}
+.le{margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.4em;text-transform:uppercase;color:var(--aqua);border:1px solid var(--aqua);padding:13px 32px;background:none;cursor:pointer;opacity:0;animation:sho 0.4s ease forwards 2s;}
+@keyframes sho{to{opacity:1;}}
+.le:hover{background:var(--aqua);color:var(--deep);}
+
+/* PREMIUM DESIGN SYSTEM */
+.cursor{position:fixed;width:20px;height:20px;border:1px solid rgba(158,243,238,0.5);border-radius:50%;pointer-events:none;z-index:99999;transition:transform 0.15s ease,opacity 0.3s;mix-blend-mode:difference;transform:translate(-50%,-50%);}
+.cursor-dot{position:fixed;width:4px;height:4px;background:var(--aqua);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.08s;}
+.cursor.hover{transform:translate(-50%,-50%) scale(2.5);border-color:rgba(158,243,238,0.8);}
+.mega .aq, .h2 .aq{
+  background:linear-gradient(135deg, #9EF3EE 0%, #208AAE 40%, #9EF3EE 60%, #208AAE 100%);
+  background-size:300% 300%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 6s ease infinite;
+}
+@keyframes shimmer{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
+.ini .body-side{
+  background:rgba(18,32,35,0.35);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid rgba(158,243,238,0.08);
+  padding:28px 32px;
+  position:relative;
+  overflow:hidden;
+}
+.ini .body-side::before{
+  content:'';position:absolute;inset:-1px;
+  background:linear-gradient(135deg,rgba(158,243,238,0.15),transparent 40%,transparent 60%,rgba(32,138,174,0.1));
+  pointer-events:none;z-index:0;
+}
+.sc{
+  border:1px solid rgba(158,243,238,0.12);
+  background:rgba(18,32,35,0.4) !important;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  position:relative;overflow:hidden;
+}
+.sc::after{
+  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
+  background:conic-gradient(from 180deg,transparent,rgba(158,243,238,0.04),transparent 30%);
+  animation:rotate 8s linear infinite;
+}
+@keyframes rotate{to{transform:rotate(360deg);}}
+.sn, .b3n{
+  text-shadow:0 0 40px rgba(158,243,238,0.3),0 0 80px rgba(158,243,238,0.1);
+  animation:numglow 3s ease-in-out infinite alternate;
+}
+@keyframes numglow{from{text-shadow:0 0 40px rgba(158,243,238,0.2),0 0 80px rgba(158,243,238,0.05);}to{text-shadow:0 0 60px rgba(158,243,238,0.45),0 0 120px rgba(158,243,238,0.15);}}
+.media{
+  transition:transform 0.6s cubic-bezier(0.23,1,0.32,1),box-shadow 0.6s ease;
+  transform-style:preserve-3d;
+}
+.media:hover{
+  box-shadow:0 32px 80px -12px rgba(158,243,238,0.15),0 0 1px rgba(158,243,238,0.3);
+}
+.ghost{
+  background:linear-gradient(90deg,rgba(158,243,238,0.06),rgba(32,138,174,0.03),rgba(158,243,238,0.06));
+  background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:ghostslide 12s linear infinite;
+}
+@keyframes ghostslide{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+.pill{transition:all 0.3s ease;}
+.pill:hover{border-color:rgba(158,243,238,0.5);color:var(--aqua);background:rgba(158,243,238,0.05);}
+.ldr{backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);}
+.lw{animation:fadeUp 1s ease 0.3s both;}
+.lb{animation:fadeUp 1s ease 0.6s both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.swc{
+  background:rgba(18,32,35,0.35) !important;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(158,243,238,0.1);
+  transition:border-color 0.4s ease;
+}
+.swc:hover{border-color:rgba(158,243,238,0.3);}
+.mv{text-shadow:0 0 20px rgba(158,243,238,0.2);}
+.hd{
+  background:rgba(8,15,16,0.5);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.ft{
+  background:rgba(8,15,16,0.3);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,255,255,0.03);
+}
+.vf{
+  border:1px solid rgba(158,243,238,0.1);
+  box-shadow:0 36px 90px -16px rgba(0,0,0,0.7),0 0 0 1px rgba(158,243,238,0.05),inset 0 0 60px rgba(0,0,0,0.3);
+}
+.vtbl tr{transition:background 0.3s ease;}
+.vtbl tbody tr:hover{background:rgba(158,243,238,0.04);}
+.sd{box-shadow:0 0 12px rgba(158,243,238,0.2);transition:box-shadow 0.3s;}
+.tli::before{box-shadow:0 0 10px rgba(158,243,238,0.3);}
+.counter{display:inline-block;}
+.amb-orb{
+  position:absolute;border-radius:50%;
+  filter:blur(80px);opacity:0.04;
+  pointer-events:none;z-index:0;
+  animation:orbFloat 20s ease-in-out infinite alternate;
+}
+.amb-orb.a1{width:500px;height:500px;background:var(--aqua);top:-10%;left:-5%;animation-delay:0s;}
+.amb-orb.a2{width:400px;height:400px;background:var(--blue);bottom:-15%;right:-8%;animation-delay:-7s;}
+.amb-orb.a3{width:350px;height:350px;background:var(--aqua);top:40%;right:-12%;animation-delay:-14s;}
+@keyframes orbFloat{
+  0%{transform:translate(0,0) scale(1);}
+  50%{transform:translate(30px,-40px) scale(1.15);}
+  100%{transform:translate(-20px,30px) scale(0.9);}
+}
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="ldr" id="ldr">
+  <img src="https://drive.google.com/uc?export=view&id=1P2vUrt8co4Of7WKiE06bNPoo1jxXJvA7" alt="Innovo" style="height:48px;margin-bottom:24px;filter:brightness(1.2);">
+  <div class="lw">INNOVO INFRA · COMPANY PROFILE · 2026</div>
+  <div class="lb"></div>
+  <div style="display:flex;gap:16px;margin-top:22px;">
+    <button class="le" id="eb" style="opacity:0;animation:sho .4s ease forwards 2s;">ENTER PRESENTATION</button>
+  </div>
+</div>
+
+<!-- FIXED VISUAL STAGE -->
+<div id="stage">
+  <div class="amb-orb a1"></div>
+  <div class="amb-orb a2"></div>
+  <div class="amb-orb a3"></div>
+  <canvas id="cv"></canvas>
+  <div class="vig"></div>
+
+  <!-- 00 COVER -->
+  <div class="sec" id="s0" data-label="Cover">
+    <div class="col-c">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">INNOVO INFRA · COMPANY PROFILE · 2026</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Pioneering</span><br/><span class="phrase aq">Infrastructure</span></div>
+      <div class="mono" style="margin-top:28px;"><span class="phrase">ROADS · MARINE · LANDSCAPE · UAE</span></div>
+    </div>
+    <div class="hint"><span>SCROLL</span><div class="harrow"></div></div>
+  </div>
+
+  <!-- 01 ABOUT US -->
+  <div class="sec" id="s1" data-label="About Us">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">01 — About Us</span></div>
+      <div class="h2"><span class="phrase">Industry <span class="aq">Leader</span>.</span></div>
+      <div class="g3" style="margin-top:32px;">
+        <div class="card" style="grid-column:span 3;">
+          <div class="cbody phrase" style="font-size:16px;line-height:1.8;max-width:none;color:rgba(240,244,245,0.8);">Innovo is an industry leader in construction and innovation across the built environment, specializing in the design, engineering, construction, development, landscape and infrastructure, financing of major real estate projects across four continents. A front-runner and innovator in the built environment, Innovo's vast and varied portfolio includes more than <span style="color:var(--aqua);font-weight:700;">130 ongoing projects</span>, encompassing luxury residential developments, villa communities, educational facilities, commercial hubs, and critical urban infrastructure.</div>
+        </div>
+      </div>
+      <div class="pills phrase" style="margin-top:32px;">
+        <div class="pill">London, UK · HQ</div>
+        <div class="pill">Dubai, UAE</div>
+        <div class="pill">Abu Dhabi, UAE</div>
+        <div class="pill">Toronto, Canada</div>
+        <div class="pill">Cairo, Egypt</div>
+        <div class="pill">Dakar, Senegal</div>
+        <div class="pill">Luanda, Angola</div>
+        <div class="pill">Riyadh, KSA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 MISSION & GOAL -->
+  <div class="sec" id="s2" data-label="Mission & Goal">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">02 — Mission &amp; Goal</span></div>
+      <div class="h2"><span class="phrase">Why we <span class="aq">build</span>.</span></div>
+      <div class="g2" style="margin-top:36px;">
+        <div class="card">
+          <div class="cid">OUR MISSION</div>
+          <div class="ctitle">Pioneer in the Built Environment</div>
+          <div class="cbody phrase">To be a pioneer in construction, MEP, landscape, infrastructure and real estate development, integrating advanced technologies, encouraging diverse perspectives from our people, and implementing sustainable practices, to lead transformative change in the industry worldwide.</div>
+        </div>
+        <div class="card">
+          <div class="cid">OUR GOAL</div>
+          <div class="ctitle">Transform. Drive Efficiency. Improve Outcomes.</div>
+          <div class="cbody phrase">Our goal is to transform the built environment, drive efficiency and improve outcomes for end-users. We advocate for the widespread adoption of technology through partnerships and common platforms, and work with our clients for more sustainable cities and communities that respect the environment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 CORE COMMITMENTS -->
+  <div class="sec" id="s3" data-label="Core Commitments">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">03 — Core Commitments</span></div>
+      <div class="h2"><span class="phrase">What <span class="aq">defines</span> us.</span></div>
+      <div class="g3">
+        <div class="card phrase">
+          <div class="cid">COMMITMENT 01 · PEOPLE</div>
+          <div class="ctitle">Investing in Our Teams</div>
+          <div class="cbody">We aim to set the industry standard for investment in people, as we understand that diverse and innovative teams are what drive better service for our clients and the communities in which we work.</div>
+        </div>
+        <div class="card phrase">
+          <div class="cid">COMMITMENT 02 · TECHNOLOGY</div>
+          <div class="ctitle">Reshaping Tomorrow</div>
+          <div class="cbody">Innovo is reshaping tomorrow with innovative solutions from intelligent building systems and AI-driven digital twins to advanced data centers. We are wholly committed to investing in cutting-edge technology.</div>
+        </div>
+        <div class="card phrase">
+          <div class="cid">COMMITMENT 03 · SUSTAINABILITY</div>
+          <div class="ctitle">Long-Term Impact</div>
+          <div class="cbody">Our drive for sustainability is rooted in understanding that sustainable practices are not just environmentally responsible but also pivotal for long-term business viability and social impact.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 BOARD OF DIRECTORS -->
+  <div class="sec" id="s4" data-label="Board of Directors" style="padding:48px 80px;">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">04 — Board of Directors</span></div>
+      <div class="h2 phrase">Our <span class="aq">leadership</span>.</div>
+      <div class="g4" style="gap:12px;margin-top:16px;">
+        <div class="card phrase"><img src="extracted-images/board-lord-philip-hammond-chairman.jpeg" alt="Lord Philip Hammond" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">CHAIRMAN</div><div class="ctitle">Lord Philip Hammond CBE</div><div class="cbody">Non-Executive Chairman. Distinguished career in British politics as Member of Parliament 1997–2019.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-bishoy-azmy-ceo.jpeg" alt="Bishoy Azmy" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">CEO</div><div class="ctitle">Bishoy Azmy</div><div class="cbody">Globally acclaimed leader and passionate advocate of responsible construction and leveraging technology and innovation.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-mei-chen-non-exec-director.jpeg" alt="Mei Chen" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">NON-EXEC DIRECTOR</div><div class="ctitle">Mei Chen</div><div class="cbody">Non-Executive Director bringing international business expertise and strategic perspective to the board.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-juergen-maier-cbe-non-exec-director.jpeg" alt="Juergen Maier CBE" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">NON-EXEC DIRECTOR</div><div class="ctitle">Juergen Maier CBE</div><div class="cbody">Non-Executive Director and former CEO of Siemens UK, championing industrial digitalisation and manufacturing.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-neil-martin-non-exec-director.jpeg" alt="Neil Martin" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">NON-EXEC DIRECTOR</div><div class="ctitle">Neil Martin</div><div class="cbody">Non-Executive Director providing independent oversight and extensive governance experience.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-abdulaziz-bin-shafar-director.jpeg" alt="Abdulaziz Bin Shafar" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">BOARD DIRECTOR</div><div class="ctitle">Abdulaziz Bin Shafar</div><div class="cbody">Board Director bringing deep regional expertise and strategic insight to Innovo's UAE operations.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-tom-tildesley-cfo.jpeg" alt="Tom Tildesley" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">CFO</div><div class="ctitle">Tom Tildesley</div><div class="cbody">Chief Financial Officer overseeing the group's financial strategy and performance across all markets.</div></div>
+        <div class="card phrase"><img src="extracted-images/board-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:100%;height:155px;object-fit:cover;object-position:top;margin-bottom:8px;border:1px solid rgba(158,243,238,0.1);"><div class="cid">GENERAL COUNSEL</div><div class="ctitle">Kate Teh</div><div class="cbody">General Counsel overseeing all legal strategy, governance and compliance across the Innovo Group.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 05 LEADERSHIP TEAM -->
+  <div class="sec" id="s5" data-label="Leadership Team" style="padding:44px 80px;">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">05 — Leadership Team</span></div>
+      <div class="h2 phrase fs-lg">The team <span class="aq">driving</span> it.</div>
+      <div class="g4" style="grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px;">
+        <div class="card phrase"><img src="extracted-images/leadership-mariam-azmy-chief-people-officer.jpeg" alt="Mariam Azmy" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CHIEF PEOPLE OFFICER</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Mariam Azmy</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-raouf-ezzat-ceo-innovo-international.jpeg" alt="Raouf Ezzat" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · INNOVO INTERNATIONAL</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Raouf Ezzat</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-sameh-fam-ceo-innovo-build.jpeg" alt="Sameh Fam" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · INNOVO BUILD</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Sameh Fam</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-paul-woodman-ceo-capital-projects.jpeg" alt="Paul Woodman" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · CAPITAL PROJECTS</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Paul Woodman</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-ibrahim-salib-ceo-real-estate.jpeg" alt="Ibrahim Salib" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · REAL ESTATE</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Ibrahim Salib</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-tom-tildesley-cfo-innovo-group.jpeg" alt="Tom Tildesley" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CFO · INNOVO GROUP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Tom Tildesley</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-roger-wahl-cto-innovo-group.jpeg" alt="Roger Wahl" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">CTO · INNOVO GROUP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Roger Wahl</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">GENERAL COUNSEL</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Kate Teh</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-arsany-thabet-md-innovo-solutions.jpeg" alt="Arsany Thabet" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO SOLUTIONS</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Arsany Thabet</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-rayan-el-eid-md-innovo-roads-infra.jpeg" alt="Rayan El Eid" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO INFRA</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Rayan El Eid</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-mohamad-gamal-md-innovo-build-egypt.jpeg" alt="Mohamad Gamal" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO BUILD EGYPT</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Mohamad Gamal</div></div>
+        <div class="card phrase"><img src="extracted-images/leadership-khalid-sharbatly-md-innovo-mep.jpeg" alt="Khalid Sharbatly" style="width:100%;height:82px;object-fit:cover;object-position:top;margin-bottom:6px;border:1px solid rgba(158,243,238,0.1);"><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO MEP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Khalid Sharbatly</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 06 WHAT WE DO -->
+  <div class="sec" id="s6" data-label="What We Do">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">06 — What We Do</span></div>
+      <div class="h2 phrase">Five <span class="aq">pillars</span>.</div>
+      <div class="g3">
+        <div class="card phrase"><div class="cid">01 · CONSTRUCTION</div><div class="ctitle">Building Beyond Boundaries</div><div class="cbody">Building, Villas, MEP, Infrastructure, Roads, Landscape &amp; Marine Works — elevating construction excellence across the region.</div></div>
+        <div class="card phrase"><div class="cid">02 · REAL ESTATE</div><div class="ctitle">Reimagining Communities</div><div class="cbody">Over $1.5 Billion global development value — creating residential communities and mixed-use properties across UK, Canada, Egypt and UAE.</div></div>
+        <div class="card phrase"><div class="cid">03 · INVESTMENT</div><div class="ctitle">Venture Capital</div><div class="cbody">Investing in founders and leaders of exceptional tech-enabled businesses with high-growth potential that improve construction outcomes.</div></div>
+        <div class="card phrase"><div class="cid">04 · TECHNOLOGY</div><div class="ctitle">Transformative Solutions</div><div class="cbody">Intelligent building systems, AI-driven digital twins, advanced data centers — reshaping tomorrow's built environment.</div></div>
+        <div class="card phrase"><div class="cid">05 · PROCUREMENT</div><div class="ctitle">Global Distribution</div><div class="cbody">Presence in UK, UAE, Canada, Italy, Egypt and Morocco — strategic partnerships, consulting and manufacturing services worldwide.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 07 KEY NUMBERS -->
+  <div class="sec" id="s7" data-label="Key Numbers">
+    <div class="col-c">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">07 — Innovo Infra at a Glance</span><span class="el"></span></div>
+      <div class="h2 phrase">The <span class="aq">numbers</span> speak.</div>
+      <div class="b3">
+        <div class="b3i phrase"><div class="b3n">130+</div><div class="b3l">Ongoing Projects Globally</div></div>
+        <div class="b3i phrase"><div class="b3n">23+</div><div class="b3l">Active UAE Projects</div></div>
+        <div class="b3i phrase"><div class="b3n">AED 3B+</div><div class="b3l">UAE Infrastructure Value</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPT TITLE: SECTORS -->
+  <div class="sec" id="s8" data-label="Sectors" data-dept="1">
+    <div class="col-c" style="position:relative;overflow:hidden;">
+      <div class="ghost">SECTORS</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 01 / 04</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Sectors of</span><br/><span class="phrase aq">Expertise</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">Rayan El Eid · Managing Director</span></div>
+    </div>
+  </div>
+
+  <!-- 09 INFRASTRUCTURE & ROADS -->
+  <div class="sec" id="s9" data-label="Infrastructure & Roads">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Sectors · 01</span>
+        <img src="extracted-images/sector-roads-roundabout-construction.jpeg" alt="Infrastructure & Roads"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">01 / Sectors</div>
+        <div class="ititle phrase">Infrastructure &amp; Roads</div>
+        <div class="idesc phrase">From engineering robust road networks to designing smart urban corridors — we combine cutting-edge technology, sustainable practices, and unparalleled expertise to shape connectivity and urban development across the UAE.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Highways &amp; Arterial Routes</div></div>
+          <div class="met"><div class="mk">Capability</div><div class="mv">Soil Stabilisation &amp; Pavement</div></div>
+          <div class="met"><div class="mk">Technology</div><div class="mv">BIM &amp; Digital Delivery</div></div>
+          <div class="met"><div class="mk">Scale</div><div class="mv">Up to AED 800M per contract</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 MARINE WORKS -->
+  <div class="sec" id="s10" data-label="Marine Works">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Sectors · 02</span>
+        <img src="extracted-images/sector-marine-works-aerial-view.jpeg" alt="Marine Works"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">02 / Sectors</div>
+        <div class="ititle phrase">Marine Works</div>
+        <div class="idesc phrase">Innovative marine infrastructure including ports, harbors, and seawalls. Leveraging expertise in dredging, shoreline protection, and waterfront development — driving coastal resilience and sustainable economic growth.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">Ports &amp; Harbors</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Dredging &amp; Shoreline Protection</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11 BRIDGES & STRUCTURES -->
+  <div class="sec" id="s11" data-label="Bridges & Structures">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Sectors · 03</span>
+        <img src="extracted-images/sector-bridges-bridge-under-construction.jpeg" alt="Bridges and Structures"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">03 / Sectors</div>
+        <div class="ititle phrase">Bridges &amp; Structures</div>
+        <div class="idesc phrase">From bridges and overpasses to underpasses and retaining walls — our expertise spans design and construction of critical structures. Unwavering focus on safety, precision and functionality ensures enduring engineering solutions.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">Bridges &amp; Overpasses</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Retaining Walls &amp; Underpasses</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12 LANDSCAPE -->
+  <div class="sec" id="s12" data-label="Landscape">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Sectors · 04</span>
+        <img src="extracted-images/sector-landscape-completed-streetscape.jpeg" alt="Landscape"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">04 / Sectors</div>
+        <div class="ititle phrase">Landscape &amp; Environment</div>
+        <div class="idesc phrase">Blending functionality with natural beauty — irrigation systems, soil management, hard &amp; soft scaping, sport fields, waterscape, landscape lighting and cycle tracks. Projects that enhance biodiversity and create vibrant ecosystems.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">In-house</div><div class="mv">50,000 m² Nursery</div></div>
+          <div class="met"><div class="mk">Capacity</div><div class="mv">25,000 Trees On-site</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPT TITLE: SERVICES -->
+  <div class="sec" id="s13" data-label="Services" data-dept="2">
+    <div class="col-c" style="position:relative;overflow:hidden;">
+      <div class="ghost">SERVICES</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 02 / 04</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Our</span><br/><span class="phrase aq">Services</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">Integrated Solutions · End-to-End Delivery</span></div>
+    </div>
+  </div>
+
+  <!-- 14 ENABLING WORKS -->
+  <div class="sec" id="s14" data-label="Enabling Works">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Services · 01</span>
+        <img src="extracted-images/service-enabling-works-grading-equipment-01.jpeg" alt="Enabling Works"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">01 / Services</div>
+        <div class="ititle phrase">Enabling Works</div>
+        <div class="idesc phrase">Site preparation, earthworks, grading, utility relocations and ground improvement — ensuring seamless project foundations while optimizing timelines and minimizing environmental impact. Multiple ground improvement techniques tailored to site requirements.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">Earthworks &amp; Grading</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Ground Improvement</div></div>
+          <div class="met"><div class="mk">Scale</div><div class="mv">Up to 3.5M m³ cut/fill</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 15 ROADWORKS -->
+  <div class="sec" id="s15" data-label="Roadworks">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Services · 02</span>
+        <img src="extracted-images/service-roadworks-completed-roundabout-aerial.jpeg" alt="Roadworks"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">02 / Services</div>
+        <div class="ititle phrase">Roadworks</div>
+        <div class="idesc phrase">Durable road networks and highways through advanced construction and maintenance solutions — highways &amp; main roads, soil improvement, pavement layers with strict quality control. Subgrade through to final asphalt with full traceability.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">Highways &amp; Urban Roads</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Soil Stabilisation &amp; CBR</div></div>
+          <div class="met"><div class="mk">Pavement</div><div class="mv">Sub-grade to Final Asphalt</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 16 INFRASTRUCTURE & UTILITIES -->
+  <div class="sec" id="s16" data-label="Infrastructure & Utilities">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Services · 03</span>
+        <img src="extracted-images/service-infrastructure-utilities-pipe-trench.jpeg" alt="Infrastructure & Utilities"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">03 / Services</div>
+        <div class="ititle phrase">Infrastructure &amp; Utilities</div>
+        <div class="idesc phrase">Critical infrastructure systems — wet utilities including sewer, stormwater, water supply, and dry utilities including electrical, street lighting, telecom. Using advanced technologies to ensure precision, reliability and resilience.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Wet Utilities</div><div class="mv">Sewer · Storm · Water</div></div>
+          <div class="met"><div class="mk">Dry Utilities</div><div class="mv">Electrical · Telecom · Lighting</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 17 STRUCTURE WORKS -->
+  <div class="sec" id="s17" data-label="Structure Works">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Services · 04</span>
+        <img src="extracted-images/service-structure-works-bridge-aerial.jpeg" alt="Structures"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">04 / Services</div>
+        <div class="ititle phrase">Structure Works</div>
+        <div class="idesc phrase">Bridges, overpasses, underpasses and retaining walls — designed and constructed to the highest standards. Engineering solutions built to endure, with safety, precision and functionality at every step.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Types</div><div class="mv">Bridges &amp; Overpasses</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Retaining Walls &amp; Culverts</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 18 MARINE WORKS SERVICE -->
+  <div class="sec" id="s18" data-label="Marine Works Service">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Services · 05</span>
+        <img src="extracted-images/service-marine-works-rock-revetment-construction.jpeg" alt="Marine Works"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">05 / Services</div>
+        <div class="ititle phrase">Marine Works</div>
+        <div class="idesc phrase">Innovative marine infrastructure solutions — ports, harbors, seawalls, dredging, shoreline protection and waterfront development. Coastal resilience delivered through deep technical expertise and proven methodology.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Delivery</div><div class="mv">Ports &amp; Harbors</div></div>
+          <div class="met"><div class="mk">Specialty</div><div class="mv">Dredging &amp; Protection</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 19 LANDSCAPING SERVICE -->
+  <div class="sec" id="s19" data-label="Agriculture & Landscaping">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Services · 06</span>
+        <img src="extracted-images/service-landscape-park-shade-structure.jpeg" alt="Landscaping"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">06 / Services</div>
+        <div class="ititle phrase">Agriculture &amp; Landscaping</div>
+        <div class="idesc phrase">Irrigation systems, soil management and sustainable landscaping including hard &amp; soft scaping, outdoor furniture, sport fields, waterscape, landscape lighting and jogging and cycle tracks — enhancing biodiversity and community wellbeing.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">In-house</div><div class="mv">50,000 m² Nursery</div></div>
+          <div class="met"><div class="mk">Output</div><div class="mv">200,000+ Shrubs/Cycle</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPT TITLE: NURSERY -->
+  <div class="sec" id="s20" data-label="In-House Nursery" data-dept="3">
+    <div class="col-c" style="position:relative;overflow:hidden;">
+      <div class="ghost">NURSERY</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 03 / 04</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">In-House</span><br/><span class="phrase aq">Nursery</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">50,000 m² · Margham Facility</span></div>
+    </div>
+  </div>
+
+  <!-- 21 NURSERY DETAIL -->
+  <div class="sec" id="s21" data-label="Nursery Facility">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Nursery · 01</span>
+        <img src="extracted-images/nursery-aerial-view-facility.jpeg" alt="In-House Nursery"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">01 / Nursery</div>
+        <div class="ititle phrase">Strategic Asset at Scale</div>
+        <div class="idesc phrase">Our plant nursery is a core strategic asset, purpose-built to deliver premium plant material at scale while upholding the highest standards of quality, reliability and environmental stewardship. Spanning over 50,000 m², the facility combines advanced horticultural expertise with modern infrastructure for consistent quality and long-term sustainability.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Facility Size</div><div class="mv">50,000 m²</div></div>
+          <div class="met"><div class="mk">Open Fields</div><div class="mv">25,000 Trees</div></div>
+          <div class="met"><div class="mk">Shrubs</div><div class="mv">200,000+ per Cycle</div></div>
+          <div class="met"><div class="mk">Water System</div><div class="mv">Automated RO Treatment</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 22 NURSERY STATS -->
+  <div class="sec" id="s22" data-label="Nursery Capabilities">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Nursery Capabilities</span></div>
+      <div class="h2 phrase fs-lg">Growing at <span class="aq">scale</span>.</div>
+      <div class="sg">
+        <div class="sc phrase"><div class="sn">50K</div><div class="sl">m² Facility Footprint</div></div>
+        <div class="sc phrase"><div class="sn">25K</div><div class="sl">Trees in Open Fields</div></div>
+        <div class="sc phrase"><div class="sn">200K+</div><div class="sl">Shrubs per Production Cycle</div></div>
+      </div>
+      <div class="g3" style="margin-top:32px;">
+        <div class="card phrase"><div class="cid">IRRIGATION</div><div class="ctitle">Fully Automated Systems</div><div class="cbody">Automated irrigation and RO water treatment systems ensuring optimal plant growth and minimal water waste.</div></div>
+        <div class="card phrase"><div class="cid">SUSTAINABILITY</div><div class="ctitle">Native &amp; Drought-Tolerant</div><div class="cbody">Sustainable cultivation with native and drought-tolerant species specifically selected for UAE climate conditions.</div></div>
+        <div class="card phrase"><div class="cid">CLIMATE</div><div class="ctitle">Controlled Environments</div><div class="cbody">Climate-controlled environments and dedicated acclimatization zones supporting large-scale and fast-track projects.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPT TITLE: TECHNOLOGY -->
+  <div class="sec" id="s23" data-label="Technology" data-dept="4">
+    <div class="col-c" style="position:relative;overflow:hidden;">
+      <div class="ghost">TECH</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 04 / 04</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Innovation &amp;</span><br/><span class="phrase aq">Technology</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">Setting New Industry Benchmarks</span></div>
+    </div>
+  </div>
+
+  <!-- 24 DRONE SURVEYS -->
+  <div class="sec" id="s24" data-label="Drone Surveys">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Technology · 01</span>
+        <img src="extracted-images/tech-drone-survey-operator-road.jpeg" alt="Drone Surveys"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">01 / Technology</div>
+        <div class="ititle phrase">Drone Surveys &amp; GIS Mapping</div>
+        <div class="idesc phrase">With geographic information systems (GIS) and 3D mapping, our drones provide accurate data collection for large-scale and detailed site assessments. This technology streamlines operations, reduces costs and accelerates project timelines.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">3D Site Mapping</div></div>
+          <div class="met"><div class="mk">Technology</div><div class="mv">GIS &amp; Photogrammetry</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">Reduced Cost &amp; Time</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 25 GPR -->
+  <div class="sec" id="s25" data-label="Ground Penetrating Radar">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Technology · 02</span>
+        <img src="extracted-images/tech-gpr-operator-scanning-ground.jpeg" alt="Ground Penetrating Radar"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">02 / Technology</div>
+        <div class="ititle phrase">Ground Penetrating Radar</div>
+        <div class="idesc phrase">GPR technology detects and maps underground utilities, including pipelines and cables, with precision up to 10 metres deep. This minimises excavation disruptions and ensures safe, efficient utility management across all active sites.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Detection Depth</div><div class="mv">Up to 10 Metres</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">Safe Utility Management</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 26 CCTV & PIPE INSPECTION -->
+  <div class="sec" id="s26" data-label="CCTV & Pipe Inspection">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Technology · 03</span>
+        <img src="extracted-images/tech-cctv-robotic-pipe-inspection.jpeg" alt="CCTV Pipe Inspection"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">03 / Technology</div>
+        <div class="ititle phrase">CCTV &amp; Robotic Pipe Inspection</div>
+        <div class="idesc phrase">Advanced CCTV and robotic systems for comprehensive pipe inspection — identifying defects, blockages and structural issues with precision. Enabling targeted maintenance, reducing excavation and extending infrastructure life.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Capability</div><div class="mv">Robotic Inspection</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">Minimal Excavation</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 27 LASER SCANNING -->
+  <div class="sec" id="s27" data-label="Laser Scanning">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Technology · 04</span>
+        <img src="extracted-images/tech-laser-scanning-road-marking-vehicle.jpeg" alt="Laser Scanning"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">04 / Technology</div>
+        <div class="ititle phrase">Laser Scanning &amp; Crack Detection</div>
+        <div class="idesc phrase">Advanced laser scanning for precise 3D measurements in topographical assessments, modelling and project planning. Asphalt crack detection using laser 3D profiling identifies and measures road surface irregularities for targeted maintenance.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Application</div><div class="mv">3D Road Profiling</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">Extended Road Longevity</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 28 POWER BI -->
+  <div class="sec" id="s28" data-label="Power BI">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Technology · 05</span>
+        <img src="extracted-images/tech-powerbi-live-dashboard-screenshot.jpeg" alt="Power BI Dashboard"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">05 / Technology</div>
+        <div class="ititle phrase">Power BI — Live Project Intelligence</div>
+        <div class="idesc phrase">Real-time visibility across all phases of the project lifecycle. Dynamic live dashboards give both our team and the client a single source of truth — tracking engineering deliverables, procurement status and on-site progress with full transparency.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Coverage</div><div class="mv">Full Project Lifecycle</div></div>
+          <div class="met"><div class="mk">Tracking</div><div class="mv">Engineering · Procurement · Site</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">On Time &amp; Within Budget</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 29 BIM -->
+  <div class="sec" id="s29" data-label="BIM">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Technology · 06</span>
+        <img src="extracted-images/tech-bim-3d-model-infrastructure-01.jpeg" alt="BIM Technology"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">06 / Technology</div>
+        <div class="ititle phrase">Building Information Modelling</div>
+        <div class="idesc phrase">Innovo leverages BIM to optimize infrastructure and marine works, enhancing design accuracy, clash detection and project coordination. Integrating 3D models with scheduling and cost data improves efficiency, reduces risks and ensures data-driven decision-making.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Application</div><div class="mv">Design to Delivery</div></div>
+          <div class="met"><div class="mk">Benefit</div><div class="mv">Clash Detection &amp; Risk Reduction</div></div>
+          <div class="met"><div class="mk">Integration</div><div class="mv">Schedule &amp; Cost Data</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPT TITLE: ONGOING PROJECTS -->
+  <div class="sec" id="s30" data-label="Ongoing Projects" data-dept="5">
+    <div class="col-c" style="position:relative;overflow:hidden;">
+      <div class="ghost">PROJECTS</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">23+ Active UAE Projects</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Ongoing</span><br/><span class="phrase aq">Projects</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">UAE · AED 3B+ Active Portfolio</span></div>
+    </div>
+  </div>
+
+  <!-- 31 EDEN HILLS -->
+  <div class="sec" id="s31" data-label="Eden Hills">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Project · 01</span>
+        <img src="extracted-images/project-eden-hills-villas-aerial-render.jpeg" alt="Eden Hills"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">01 / Ongoing</div>
+        <div class="ititle phrase">Eden Hills Villas — Roads &amp; Utility Works</div>
+        <div class="idesc phrase">Construction of infrastructure for the development including road network, service reservation, stormwater drainage, street lighting, traffic control, potable water, sewerage, irrigation, firefighting, electrical, telecom, gas ducts and all utility tie-in connections.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Eden Hills LLC (H&H)</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Dubai, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 134 Million</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 32 DUBAI MASTER DEVELOPMENTS -->
+  <div class="sec" id="s32" data-label="Dubai Master Developments">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Project · 02</span>
+        <img src="extracted-images/page33-extra-12.jpeg" alt="Dubai Master Developments"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">02 / Ongoing</div>
+        <div class="ititle phrase fs-sm">Dubai Master Developments — Haven, Athlon &amp; The Wilds</div>
+        <div class="idesc phrase">Three locations: site clearance (3,500,000 m²), enabling works of cut (2,100,000 m³) and fill (2,800,000 m³) to required levels, installation of hoarding fence (15,200 m).</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Aldar Projects</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Dubai, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 113 Million</div></div>
+          <div class="met"><div class="mk">Scope</div><div class="mv">3.5M m² Clearance</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 33 GHAF WOODS -->
+  <div class="sec" id="s33" data-label="Ghaf Woods">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Project · 03</span>
+        <img src="extracted-images/page34-extra-5.jpeg" alt="Ghaf Woods"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">03 / Ongoing</div>
+        <div class="ititle phrase">Ghaf Woods — Infrastructure &amp; Road Works</div>
+        <div class="idesc phrase">Road network, stormwater drainage, street lighting, potable water, sewerage, irrigation, firefighting, electrical (HV &amp; LV), telecoms, security ducts, spare ducts and all utility tie-in connections.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Majed Al Futtaim (MAF)</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Dubai, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 180 Million</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 34 DUBAI POLICE ACADEMY -->
+  <div class="sec" id="s34" data-label="Dubai Police Academy">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Project · 04</span>
+        <img src="extracted-images/project-dubai-police-academy-aerial-render.jpeg" alt="Dubai Police Academy"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">04 / Ongoing</div>
+        <div class="ititle phrase">Dubai Police Academy — Infrastructure &amp; Roads</div>
+        <div class="idesc phrase">Earthworks, roads and pavings, potable water works, electrical works, telecom duct works (Etisalat), firefighting, stormwater, sanitary sewer, road lighting, irrigation and chilled water works.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Dubai Police</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Dubai, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 128 Million</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 35 SAADIYAT LAGOONS -->
+  <div class="sec" id="s35" data-label="Saadiyat Lagoons">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Project · 05</span>
+        <img src="extracted-images/project-saadiyat-lagoons-pkg3-aerial-render.png" alt="Saadiyat Lagoons"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">05 / Ongoing</div>
+        <div class="ititle phrase">Saadiyat Lagoons — Package 3 Infrastructure</div>
+        <div class="idesc phrase">Roads and infrastructure works including earthworks, sewer, stormwater, irrigation, potable water, street lighting, power &amp; substation, telecom, streetscape with hard &amp; soft scaping, gas network, asphalt road, kerb &amp; tile works, road marking &amp; signage.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Aldar Properties</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Abu Dhabi, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 323 Million</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 36 AL SADER HOUSING -->
+  <div class="sec" id="s36" data-label="Al Sader Housing">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Project · 06</span>
+        <img src="extracted-images/project-al-sader-housing-infrastructure-plan.jpeg" alt="Al Sader Housing"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">06 / Ongoing</div>
+        <div class="ititle phrase">Al Sader National Housing Infrastructure</div>
+        <div class="idesc phrase">Al Sader National Housing Development — 209.41 ha, 840 plots including 800 residential villas. 39.7 km roads, 62.6 km sidewalks, cycle tracks, signalized intersections, roundabouts, all utility networks and streetscapes.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Aldar Projects</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Abu Dhabi, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 800 Million</div></div>
+          <div class="met"><div class="mk">Roads</div><div class="mv">39.7 km Network</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 37 NORTH AL BAHIA -->
+  <div class="sec" id="s37" data-label="North Al Bahia">
+    <div class="ini">
+      <div class="media">
+        <span class="itag">Project · 07</span>
+        <img src="extracted-images/project-north-al-bahia-residential-aerial-render.jpeg" alt="North Al Bahia"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">07 / Ongoing</div>
+        <div class="ititle phrase">North Al Bahia Housing — Design &amp; Build</div>
+        <div class="idesc phrase">Design and build of 600 residential plots in North Al Bahia, Abu Dhabi — all infrastructure disciplines including roads, streetscape, irrigation, potable water, stormwater, sewerage, power, street lighting and telecoms to a new area.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Aldar Projects</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Abu Dhabi, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 429 Million</div></div>
+          <div class="met"><div class="mk">Plots</div><div class="mv">600 Residential</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 38 FLOOD PROTECTION SHARJAH -->
+  <div class="sec" id="s38" data-label="Flood Protection Sharjah">
+    <div class="ini r">
+      <div class="media">
+        <span class="itag">Project · 08</span>
+        <img src="extracted-images/project-junction-b-flood-protection-sharjah-map.png" alt="Flood Protection"/>
+      </div>
+      <div class="body-side">
+        <div class="inum phrase">08 / Ongoing</div>
+        <div class="ititle phrase">Junction B Flood Protection — Sharjah</div>
+        <div class="idesc phrase">Design and construction of wadi channel formation &amp; reno mattress protection — 120m width, 2m depth, approx. 9.5 km between E102 and S142 Khorfakkan Road, plus 20-cell box culvert (3m×2m) across both roads.</div>
+        <div class="metrics phrase">
+          <div class="met"><div class="mk">Client</div><div class="mv">Etihad Rail</div></div>
+          <div class="met"><div class="mk">Location</div><div class="mv">Sharjah, UAE</div></div>
+          <div class="met"><div class="mk">Value</div><div class="mv">AED 127.4 Million</div></div>
+          <div class="met"><div class="mk">Length</div><div class="mv">9.5 km Channel</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 39 PROJECT VALUE TABLE -->
+  <div class="sec" id="s39" data-label="Project Portfolio">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">UAE Active Portfolio — Selected Projects</span></div>
+      <div class="h2 phrase">What it's <span class="aq">worth</span>.</div>
+      <table class="vtbl phrase">
+        <thead><tr><th>PROJECT</th><th>CLIENT</th><th>VALUE</th></tr></thead>
+        <tbody>
+          <tr><td>Al Sader National Housing</td><td>Aldar Projects</td><td class="aq">AED 800M</td></tr>
+          <tr><td>North Al Bahia D&amp;B</td><td>Aldar Projects</td><td class="aq">AED 429M</td></tr>
+          <tr><td>Saadiyat Lagoons Pkg 3</td><td>Aldar Properties</td><td class="aq">AED 323M</td></tr>
+          <tr><td>Al Wiqan Roads &amp; Infrastructure</td><td>Aldar Projects</td><td class="aq">AED 198M</td></tr>
+          <tr><td>Ghaf Woods Infrastructure</td><td>Majed Al Futtaim</td><td class="aq">AED 180M</td></tr>
+          <tr><td>Dubai South Boulevard Roads</td><td>Dubai South</td><td class="aq">AED 165.5M</td></tr>
+          <tr><td>Eden Hills Villas Roads</td><td>Eden Hills LLC (H&H)</td><td class="aq">AED 134M</td></tr>
+          <tr><td>Dubai Police Academy</td><td>Dubai Police</td><td class="aq">AED 128M</td></tr>
+          <tr><td>D&amp;B Flood Protection Sharjah</td><td>Etihad Rail</td><td class="aq">AED 127.4M</td></tr>
+          <tr><td>Dubai Master Developments</td><td>Aldar Projects</td><td class="aq">AED 113M</td></tr>
+          <tr><td>Naseem Al Jurf Phase 3B</td><td>Imkan</td><td class="aq">AED 107M</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 40 COMPLETED PROJECTS -->
+  <div class="sec" id="s40" data-label="Completed Projects">
+    <div class="col-l">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Completed Projects — Selected</span></div>
+      <div class="h2 phrase">A track <span class="aq">record</span>.</div>
+      <div class="g3">
+        <div class="card phrase"><div class="cid">DUBAI HOLDING</div><div class="ctitle">Mudon Central Park Ph. 5&6</div><div class="cbody">Enabling, roads and infrastructure — earthworks, sewer, stormwater, irrigation, water, firefighting, street lighting, telecom and asphalt.<br/><span style="color:var(--aqua);font-weight:600;">AED 43 Million</span></div></div>
+        <div class="card phrase"><div class="cid">DUBAI HOLDING</div><div class="ctitle">Nad Al Sheba Gardens — F&G</div><div class="cbody">Full infrastructure including road network, stormwater, street lighting, potable water, sewerage, irrigation, firefighting, electrical and telecoms.<br/><span style="color:var(--aqua);font-weight:600;">AED 57 Million</span></div></div>
+        <div class="card phrase"><div class="cid">UK EXPORT FINANCE</div><div class="ctitle">Marsa Al Arab — Storm Water</div><div class="cbody">External storm water network and pump station — SWD lifting station, oil interceptor, HDPE pipe laying and outfall structure modification.<br/><span style="color:var(--aqua);font-weight:600;">AED 18.6 Million</span></div></div>
+        <div class="card phrase"><div class="cid">ALDAR · AL AIN</div><div class="ctitle">262 Residential Plots — Al Qou'a</div><div class="cbody">Full infrastructure for 262 residential plots in Al Qou'a — roads, streetscape, irrigation, potable water, stormwater, sewerage, power, lighting and telecoms.<br/><span style="color:var(--aqua);font-weight:600;">AED 64 Million</span></div></div>
+        <div class="card phrase"><div class="cid">ALDAR</div><div class="ctitle">Haven–Athlon–Wilds Enabling (D104)</div><div class="cbody">Site setup, clearing, removal of existing structures, excavation to reduce levels, and filling from imported materials in layers.<br/><span style="color:var(--aqua);font-weight:600;">AED 64 Million</span></div></div>
+        <div class="card phrase"><div class="cid">ALDAR · AL AIN</div><div class="ctitle">Al Faya Solar Street Lighting 125 km</div><div class="cbody">Upgrade of Al Faya–Razeen–Al Qua'a road with 2,222 solar street lights across a 125 km network.<br/><span style="color:var(--aqua);font-weight:600;">AED 78 Million</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 41 IMPACT NUMBERS -->
+  <div class="sec" id="s41" data-label="Impact">
+    <div class="col-c">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Innovo Infra · UAE Impact</span><span class="el"></span></div>
+      <div class="h2 phrase">The <span class="aq">big</span> numbers.</div>
+      <div class="b3">
+        <div class="b3i phrase"><div class="b3n">AED<br/>3B+</div><div class="b3l">Active UAE Infrastructure Portfolio</div></div>
+        <div class="b3i phrase"><div class="b3n">23+</div><div class="b3l">UAE Active Projects</div></div>
+        <div class="b3i phrase"><div class="b3n">50K m²</div><div class="b3l">In-House Nursery Facility</div></div>
+      </div>
+      <div class="pills phrase" style="margin-top:48px;">
+        <div class="pill">Top Employer UAE 2025</div>
+        <div class="pill">ISO 9001:2015</div>
+        <div class="pill">ISO 14001:2015</div>
+        <div class="pill">ISO 45001:2018</div>
+        <div class="pill">RTA Certified</div>
+        <div class="pill">4 Continents</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 42 THANK YOU -->
+  <div class="sec" id="s42" data-label="Thank You">
+    <div class="col-c">
+      <div class="eyebrow"><span class="el"></span><span class="phrase">END · 43 / 43</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Thank</span><br/><span class="aq phrase">You</span></div>
+      <div class="turl"><span class="phrase">innovogroup.com</span></div>
+      <div class="tloc">
+        <span class="phrase">DUBAI · ABU DHABI · LONDON · CAIRO</span><br/>
+        <span class="phrase">TORONTO · RIYADH · DAKAR · LUANDA</span>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /stage -->
+
+<!-- FIXED UI -->
+<div class="hd">
+  <div class="hdb"><img src="https://drive.google.com/uc?export=view&id=1P2vUrt8co4Of7WKiE06bNPoo1jxXJvA7" alt="Innovo" style="height:22px;filter:brightness(1.1);"></div>
+  <div class="hdr">
+    <span id="secLabel">Cover</span>
+    <div class="hpb"><div class="hpf" id="hpf"></div></div>
+    <span id="secNum">00 / 42</span>
+  </div>
+</div>
+<div class="ft">
+  <div class="ftl">Innovo Infra · Company Profile 2026</div>
+  <div class="ftr">innovogroup.com</div>
+</div>
+
+<script>
+(function(){
+  gsap.registerPlugin(ScrollTrigger);
+  function srand(s){var x=Math.sin(s*12.9898+78.233)*43758.5453;return x-Math.floor(x);}
+
+  // THREE.JS GPU PARTICLE SYSTEM
+  const cv=document.getElementById('cv');
+  const renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+  renderer.setSize(innerWidth,innerHeight);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setClearColor(0x000000,0);
+  const scene=new THREE.Scene();
+  scene.fog=new THREE.FogExp2(0x080f10,0.035);
+  const camera=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.1,200);
+  camera.position.set(0,3,14);
+  addEventListener('resize',()=>{renderer.setSize(innerWidth,innerHeight);camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();});
+
+  const COUNT=5000;
+  function gen(fn){const a=new Float32Array(COUNT*3);for(let i=0;i<COUNT;i++){const p=fn(i);a[i*3]=p[0];a[i*3+1]=p[1];a[i*3+2]=p[2];}return a;}
+
+  const S0=gen(i=>{const phi=Math.acos(-1+(2*i)/COUNT),th=Math.sqrt(COUNT*Math.PI)*phi,r=7+(srand(i*7)-.5)*4;return[r*Math.cos(th)*Math.sin(phi),r*Math.sin(th)*Math.sin(phi)*.6,r*Math.cos(phi)];});
+  const S1=gen(i=>{const c=Math.ceil(Math.sqrt(COUNT)),x=(i%c/c-.5)*16,z=(Math.floor(i/c)/c-.5)*16,y=Math.sin(x*.7)*Math.cos(z*.5)*1.5+Math.sin(x*1.3+z*.8)*.6+srand(i*3)*.3;return[x,y-1,z];});
+  const S2=gen(i=>{const c=Math.ceil(Math.sqrt(COUNT)),x=(i%c/c-.5)*14,z=(Math.floor(i/c)/c-.5)*14,r=Math.sqrt(x*x+z*z),y=Math.max(0,6-r*.9)*(1+srand(i*11)*.12);return[x,y-1.5,z];});
+  const S3=gen(i=>{const c=Math.ceil(Math.sqrt(COUNT)),x=(i%c/c-.5)*14,z=(Math.floor(i/c)/c-.5)*14,r=Math.sqrt(x*x+z*z),y=-Math.max(0,5-r)*(1+srand(i*11)*.15)+Math.sin(r*2)*.5;return[x,y+2,z];});
+  const S4=gen(i=>{const t=(i/COUNT)*Math.PI*12,r=2.8,s=i%2,o=s*Math.PI;return[r*Math.cos(t+o),(i/COUNT-.5)*14,r*Math.sin(t+o)];});
+
+  const shapes=[S0,S1,S2,S3,S4,S0];
+  const camPath=[{x:0,y:3,z:14},{x:2,y:5,z:11},{x:0,y:1.5,z:5},{x:-1,y:-1,z:7},{x:5,y:1,z:5},{x:0,y:3,z:14}];
+
+  const geo=new THREE.BufferGeometry();
+  const pos=new Float32Array(COUNT*3);
+  const tgt=new Float32Array(COUNT*3);
+  const rnd=new Float32Array(COUNT);
+  const sizes=new Float32Array(COUNT);
+  for(let i=0;i<COUNT*3;i++){pos[i]=S0[i];tgt[i]=S1[i];}
+  for(let i=0;i<COUNT;i++){rnd[i]=srand(i*17);sizes[i]=srand(i*31)*.8+.2;}
+
+  geo.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  geo.setAttribute('aTarget',new THREE.BufferAttribute(tgt,3));
+  geo.setAttribute('aRand',new THREE.BufferAttribute(rnd,1));
+  geo.setAttribute('aSize',new THREE.BufferAttribute(sizes,1));
+
+  const mat=new THREE.ShaderMaterial({
+    uniforms:{uMorph:{value:0},uTime:{value:0},uPixelRatio:{value:Math.min(devicePixelRatio,2)},uMouse:{value:new THREE.Vector3(-999,-999,0)}},
+    vertexShader:`
+      attribute vec3 aTarget;
+      attribute float aRand;
+      attribute float aSize;
+      uniform float uMorph;
+      uniform float uTime;
+      uniform float uPixelRatio;
+      uniform vec3 uMouse;
+      varying float vAlpha;
+      varying float vRand;
+      void main(){
+        float t=smoothstep(0.0,1.0,uMorph);
+        vec3 morphed=mix(position,aTarget,t);
+        morphed.x+=sin(uTime*.3+aRand*6.28)*.15*aRand;
+        morphed.y+=cos(uTime*.25+aRand*3.14)*.1*aRand;
+        morphed.z+=sin(uTime*.2+aRand*9.42)*.12*aRand;
+        vec3 worldPos=(modelMatrix*vec4(morphed,1.0)).xyz;
+        float mDist=distance(worldPos,uMouse);
+        if(mDist<3.0){
+          vec3 pushDir=normalize(worldPos-uMouse);
+          float force=(1.0-mDist/3.0)*1.5;
+          morphed+=pushDir*force;
+        }
+        vec4 mv=modelViewMatrix*vec4(morphed,1.0);
+        gl_Position=projectionMatrix*mv;
+        gl_PointSize=aSize*55.0*uPixelRatio/(-mv.z);
+        vAlpha=smoothstep(45.0,2.0,-mv.z)*(.5+aRand*.5);
+        vRand=aRand;
+      }`,
+    fragmentShader:`
+      varying float vAlpha;
+      varying float vRand;
+      void main(){
+        float d=length(gl_PointCoord-vec2(.5));
+        if(d>.5)discard;
+        float glow=1.0-smoothstep(0.0,0.5,d);
+        glow=pow(glow,1.5);
+        vec3 aqua=vec3(.62,.953,.933);
+        vec3 blue=vec3(.125,.541,.682);
+        vec3 col=mix(blue,aqua,vRand);
+        gl_FragColor=vec4(col,glow*vAlpha);
+      }`,
+    transparent:true,blending:THREE.AdditiveBlending,depthWrite:false
+  });
+  const pts=new THREE.Points(geo,mat);
+  scene.add(pts);
+
+  let mx=.5,my=.5;
+  const raycaster=new THREE.Raycaster();
+  const mouseNDC=new THREE.Vector2();
+  const mousePlane=new THREE.Plane(new THREE.Vector3(0,0,1),0);
+  const mouseWorld=new THREE.Vector3();
+  addEventListener('mousemove',e=>{
+    mx=e.clientX/innerWidth;my=e.clientY/innerHeight;
+    mouseNDC.x=(e.clientX/innerWidth)*2-1;
+    mouseNDC.y=-(e.clientY/innerHeight)*2+1;
+    raycaster.setFromCamera(mouseNDC,camera);
+    raycaster.ray.intersectPlane(mousePlane,mouseWorld);
+    mat.uniforms.uMouse.value.copy(mouseWorld);
+  },{passive:true});
+
+  // GSAP SCROLL ENGINE
+  const secs=[...document.querySelectorAll('.sec')];
+  const N=secs.length;
+  const VH=innerHeight;
+  const SCROLL_PER_SEC=VH*1.4;
+  const TOTAL=SCROLL_PER_SEC*N+VH;
+  document.body.style.height=TOTAL+'px';
+
+  const hpf=document.getElementById('hpf');
+  const secLabel=document.getElementById('secLabel');
+  const secNum=document.getElementById('secNum');
+  function pad(n,t){return String(n).padStart(2,'0')+' / '+String(t).padStart(2,'0');}
+
+  let morphState={from:0,to:1,t:0};
+  function setMorphTargets(fromIdx,toIdx){
+    const p=geo.attributes.position.array;
+    const a=geo.attributes.aTarget.array;
+    for(let i=0;i<COUNT*3;i++){p[i]=shapes[fromIdx][i];a[i]=shapes[toIdx][i];}
+    geo.attributes.position.needsUpdate=true;
+    geo.attributes.aTarget.needsUpdate=true;
+  }
+
+  const tl=gsap.timeline({
+    scrollTrigger:{trigger:'body',start:'top top',end:'bottom bottom',scrub:1.5}
+  });
+  const ns=shapes.length-1;
+  for(let i=0;i<ns;i++){
+    tl.to(morphState,{t:1,duration:1,ease:'none',
+      onStart:()=>{morphState.from=i;morphState.to=i+1;setMorphTargets(i,i+1);morphState.t=0;},
+      onUpdate:()=>{mat.uniforms.uMorph.value=morphState.t;}
+    });
+    if(i<ns-1) tl.set(morphState,{t:0});
+  }
+
+  function easeIO(t){t=Math.max(0,Math.min(1,t));return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
+  function lerp(a,b,t){return a+(b-a)*t;}
+
+  let smoothS=0;
+  function tick(time){
+    smoothS+=(scrollY-smoothS)*.06;
+    const s=smoothS;
+    mat.uniforms.uTime.value=time*.001;
+
+    const prog=Math.min(1,s/(TOTAL-VH));
+    const sf=prog*(camPath.length-1);
+    const si=Math.min(Math.floor(sf),camPath.length-2);
+    const ct=easeIO(sf-si);
+    const cA=camPath[si],cB=camPath[si+1];
+    camera.position.x=lerp(cA.x,cB.x,ct)+(mx-.5)*2.5;
+    camera.position.y=lerp(cA.y,cB.y,ct)+(my-.5)*1.2;
+    camera.position.z=lerp(cA.z,cB.z,ct);
+    camera.lookAt(0,0,0);
+
+    pts.rotation.y=prog*Math.PI*3;
+    pts.rotation.x=Math.sin(prog*Math.PI*2)*.12;
+
+    hpf.style.width=(prog*100)+'%';
+    const ai=Math.min(N-1,Math.floor(s/SCROLL_PER_SEC));
+    secLabel.textContent=secs[ai]?.dataset.label||'';
+    secNum.textContent=pad(ai,N-1);
+
+    secs.forEach((sec,i)=>{
+      const sC=i*SCROLL_PER_SEC+SCROLL_PER_SEC*.5;
+      const off=(s-sC)/VH;
+      const dist=Math.abs(off);
+      const fS=.25,fE=.85;
+      let op;if(dist<=fS)op=1;else if(dist>=fE)op=0;else op=easeIO(1-(dist-fS)/(fE-fS));
+      const sc=1-Math.min(.04,dist*.05);
+      sec.style.transform=`translateY(${off*18}px) scale(${sc})`;
+      sec.style.opacity=op;
+      sec.style.visibility=op<.005?'hidden':'visible';
+      const phs=sec.querySelectorAll('.phrase');
+      phs.forEach((ph,pi)=>{const d=Math.max(0,dist-pi*.04);let po;if(d<=fS)po=1;else if(d>=fE)po=0;else po=easeIO(1-(d-fS)/(fE-fS));ph.style.opacity=po;ph.style.transform=`translateY(${d*15}px)`;});
+      const g=sec.querySelector('.ghost');if(g)g.style.transform=`translateY(${-off*35}px)`;
+      sec.querySelectorAll('.media').forEach(el=>{el.style.transform=`translateY(${off*15}px)`;});
+    });
+
+    renderer.render(scene,camera);
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+
+  // Loader
+  const ldr=document.getElementById('ldr'),eb=document.getElementById('eb');
+  function dismiss(){
+    if(ldr.classList.contains('gone'))return;
+    ldr.classList.add('gone');
+    setTimeout(()=>{if(ldr.parentNode)ldr.remove();},1000);
+  }
+  eb.addEventListener('click',()=>dismiss());
+
+  // Animated Number Counters
+  const counters=new Map();
+  function animateCounters(){
+    document.querySelectorAll('.sn,.b3n,.mv').forEach(el=>{if(counters.has(el))return;const t=el.textContent.trim(),m=t.match(/([\d,]+)/);if(!m)return;const n=parseInt(m[1].replace(/,/g,''));if(isNaN(n)||n>100000)return;const p=el.closest('.sec');if(!p)return;counters.set(el,{target:n,prefix:t.slice(0,t.indexOf(m[1])),suffix:t.slice(t.indexOf(m[1])+m[1].length),parent:p,done:false});});
+    counters.forEach((d,el)=>{if(d.done)return;if((parseFloat(d.parent.style.opacity)||0)>.8){d.done=true;const t0=performance.now();(function step(now){const p=Math.min(1,(now-t0)/1200),v=Math.round((1-Math.pow(1-p,3))*d.target);el.textContent=d.prefix+v.toLocaleString()+d.suffix;if(p<1)requestAnimationFrame(step);})(t0);}});
+  }
+  setInterval(animateCounters,200);
+})();
+</script>
+<script>
+  document.addEventListener('contextmenu', e => e.preventDefault());
+  document.addEventListener('keydown', e => {
+    if(e.key === 'F12') e.preventDefault();
+  });
+</script>
+</body>
+</html>

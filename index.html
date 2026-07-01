@@ -308,6 +308,7 @@ body{
 }
 @keyframes ghostslide{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
 .pill{transition:all 0.3s ease;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
 .pill:hover{border-color:rgba(8,145,178,0.6);color:var(--aqua);background:rgba(8,145,178,0.08);}
 .ldr{backdrop-filter:blur(40px);-webkit-backdrop-filter:blur(40px);}
 .lw{animation:fadeUp 1s ease 0.3s both;}
@@ -354,13 +355,18 @@ body{
   50%{transform:translate(30px,-40px) scale(1.15);}
   100%{transform:translate(-20px,30px) scale(0.9);}
 }
+.img-grid-card{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,0.6);}
+.img-grid-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease;}
+.img-grid-card:hover img{transform:scale(1.04);}
+.img-grid-overlay{position:absolute;inset:0;background:rgba(255,255,255,0.70);opacity:0;transition:opacity 0.35s ease;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:36px;text-align:center;}
+.img-grid-card:hover .img-grid-overlay{opacity:1;}
 </style>
 </head>
 <body>
 
 <!-- LOADER -->
 <div class="ldr" id="ldr">
-  <img src="extracted-images/innovo-logo-dark.png" alt="Innovo" style="height:80px;margin-bottom:36px;display:block;margin-left:auto;margin-right:auto;">
+  <img src="INNOVO_Infra_Logo_PNG.png" alt="Innovo Infra" style="height:90px;margin-bottom:36px;display:block;margin-left:auto;margin-right:auto;">
   <div class="lw">INNOVO INFRA · COMPANY PROFILE · 2026</div>
   <div class="lb"></div>
   <div style="display:flex;gap:16px;margin-top:22px;">
@@ -455,57 +461,59 @@ body{
   </div>
 
   <!-- 04 BOARD OF DIRECTORS -->
-  <div class="sec" id="s4" data-label="Board of Directors" style="padding:48px 80px;">
+  <div class="sec" id="s4" data-label="Board of Directors" style="padding:40px 72px;">
     <div class="col-l">
       <div class="eyebrow"><span class="el"></span><span class="phrase">04 — Board of Directors</span></div>
       <div class="h2 phrase">Our <span class="aq">leadership</span>.</div>
-      <div class="g4" style="gap:14px;margin-top:18px;">
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-lord-philip-hammond.jpeg" alt="Lord Philip Hammond" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">CHAIRMAN</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Lord Philip Hammond CBE</div><div class="cbody" style="font-size:11px;line-height:1.45;">Non-Executive Chairman. Distinguished MP career 1997–2019.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-bishoy-azmy-ceo.jpeg" alt="Bishoy Azmy" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">CEO · INNOVO GROUP</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Bishoy Azmy</div><div class="cbody" style="font-size:11px;line-height:1.45;">Globally acclaimed leader in responsible construction and innovation.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-mei-chen-non-exec-director.jpeg" alt="Mei Chen" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Mei Chen</div><div class="cbody" style="font-size:11px;line-height:1.45;">Bringing international business expertise and strategic perspective.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-juergen-maier-cbe-non-exec-director.jpeg" alt="Juergen Maier CBE" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Juergen Maier CBE</div><div class="cbody" style="font-size:11px;line-height:1.45;">Former CEO of Siemens UK, championing industrial digitalisation.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-neil-martin-non-exec-director.jpeg" alt="Neil Martin" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Neil Martin</div><div class="cbody" style="font-size:11px;line-height:1.45;">Independent oversight and extensive board governance experience.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-abdulaziz-bin-shafar-director.jpeg" alt="Abdulaziz Bin Shafar" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">BOARD DIRECTOR</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Abdulaziz Bin Shafar</div><div class="cbody" style="font-size:11px;line-height:1.45;">Deep regional expertise and strategic insight into UAE operations.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-tom-tildesley-cfo.jpeg" alt="Tom Tildesley" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">CFO · INNOVO GROUP</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Tom Tildesley</div><div class="cbody" style="font-size:11px;line-height:1.45;">Overseeing the group's financial strategy and performance globally.</div></div></div></div>
-        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:68px;height:68px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="margin-bottom:4px;">GENERAL COUNSEL</div><div class="ctitle" style="font-size:13px;margin-bottom:4px;">Kate Teh</div><div class="cbody" style="font-size:11px;line-height:1.45;">All legal strategy, governance and compliance across the group.</div></div></div></div>
-      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px;width:100%;max-width:1400px;">
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:12px;"><img src="extracted-images/board-lord-philip-hammond.jpeg" alt="Lord Philip Hammond" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">CHAIRMAN</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Lord Philip Hammond CBE</div><div class="cbody" style="font-size:12px;line-height:1.5;">Non-Executive Chairman. Distinguished MP career 1997–2019.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-bishoy-azmy-ceo.jpeg" alt="Bishoy Azmy" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">CEO · INNOVO GROUP</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Bishoy Azmy</div><div class="cbody" style="font-size:12px;line-height:1.5;">Globally acclaimed leader in responsible construction and innovation.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-mei-chen-non-exec-director.jpeg" alt="Mei Chen" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Mei Chen</div><div class="cbody" style="font-size:12px;line-height:1.5;">Bringing international business expertise and strategic perspective.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-juergen-maier-cbe-non-exec-director.jpeg" alt="Juergen Maier CBE" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Juergen Maier CBE</div><div class="cbody" style="font-size:12px;line-height:1.5;">Former CEO of Siemens UK, championing industrial digitalisation.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-neil-martin-non-exec-director.jpeg" alt="Neil Martin" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">NON-EXEC DIRECTOR</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Neil Martin</div><div class="cbody" style="font-size:12px;line-height:1.5;">Independent oversight and extensive board governance experience.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-abdulaziz-bin-shafar-director.jpeg" alt="Abdulaziz Bin Shafar" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">BOARD DIRECTOR</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Abdulaziz Bin Shafar</div><div class="cbody" style="font-size:12px;line-height:1.5;">Deep regional expertise and strategic insight into UAE operations.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-tom-tildesley-cfo.jpeg" alt="Tom Tildesley" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">CFO · INNOVO GROUP</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Tom Tildesley</div><div class="cbody" style="font-size:12px;line-height:1.5;">Overseeing the group's financial strategy and performance globally.</div></div></div></div>
+        <div class="card phrase" style="padding-top:14px;"><div style="display:flex;align-items:center;gap:14px;"><img src="extracted-images/board-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:110px;height:110px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="margin-bottom:5px;">GENERAL COUNSEL</div><div class="ctitle" style="font-size:15px;margin-bottom:5px;">Kate Teh</div><div class="cbody" style="font-size:12px;line-height:1.5;">All legal strategy, governance and compliance across the group.</div></div></div></div>
+      </div><!-- /board grid -->
     </div>
   </div>
 
   <!-- 05 LEADERSHIP TEAM -->
-  <div class="sec" id="s5" data-label="Leadership Team" style="padding:44px 80px;">
+  <div class="sec" id="s5" data-label="Leadership Team" style="padding:40px 72px;">
     <div class="col-l">
       <div class="eyebrow"><span class="el"></span><span class="phrase">05 — Leadership Team</span></div>
-      <div class="h2 phrase fs-lg">The team <span class="aq">driving</span> it.</div>
-      <div class="g4" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;">
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-mariam-azmy-chief-people-officer.jpeg" alt="Mariam Azmy" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CHIEF PEOPLE OFFICER</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Mariam Azmy</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-raouf-ezzat-ceo-innovo-international.jpeg" alt="Raouf Ezzat" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · INNOVO INTERNATIONAL</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Raouf Ezzat</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-sameh-fam-ceo-innovo-build.jpeg" alt="Sameh Fam" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · INNOVO BUILD</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Sameh Fam</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-paul-woodman-ceo-capital-projects.jpeg" alt="Paul Woodman" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · CAPITAL PROJECTS</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Paul Woodman</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-ibrahim-salib-ceo-real-estate.jpeg" alt="Ibrahim Salib" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CEO · REAL ESTATE</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Ibrahim Salib</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/board-tom-tildesley-cfo.jpeg" alt="Tom Tildesley" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CFO · INNOVO GROUP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Tom Tildesley</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-roger-wahl-cto-innovo-group.jpeg" alt="Roger Wahl" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">CTO · INNOVO GROUP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Roger Wahl</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/board-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">GENERAL COUNSEL</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Kate Teh</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-arsany-thabet-md-innovo-solutions.jpeg" alt="Arsany Thabet" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO SOLUTIONS</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Arsany Thabet</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-rayan-el-eid-md-innovo-roads-infra.jpeg" alt="Rayan El Eid" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO INFRA</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Rayan El Eid</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-mohamed-gamal-md-innovo-build-egypt.jpeg" alt="Mohamad Gamal" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO BUILD EGYPT</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Mohamad Gamal</div></div></div></div>
-        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-khalid-sharbatly-md-innovo-mep.jpeg" alt="Khalid Sharbatly" style="width:54px;height:54px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);"><div><div class="cid" style="font-size:8px;margin-bottom:3px;">MD · INNOVO MEP</div><div class="ctitle" style="font-size:12px;line-height:1.2;margin-bottom:0;">Khalid Sharbatly</div></div></div></div>
-      </div>
+      <div class="h2 phrase">The team <span class="aq">driving</span> it.</div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px;width:100%;max-width:1400px;">
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-mariam-azmy-chief-people-officer.jpeg" alt="Mariam Azmy" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CHIEF PEOPLE OFFICER</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Mariam Azmy</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-raouf-ezzat-ceo-innovo-international.jpeg" alt="Raouf Ezzat" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CEO · INNOVO INTERNATIONAL</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Raouf Ezzat</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-sameh-fam-ceo-innovo-build.jpeg" alt="Sameh Fam" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CEO · INNOVO BUILD</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Sameh Fam</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-paul-woodman-ceo-capital-projects.jpeg" alt="Paul Woodman" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CEO · CAPITAL PROJECTS</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Paul Woodman</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-ibrahim-salib-ceo-real-estate.jpeg" alt="Ibrahim Salib" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CEO · REAL ESTATE</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Ibrahim Salib</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/board-tom-tildesley-cfo.jpeg" alt="Tom Tildesley" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CFO · INNOVO GROUP</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Tom Tildesley</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-roger-wahl-cto-innovo-group.jpeg" alt="Roger Wahl" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">CTO · INNOVO GROUP</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Roger Wahl</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/board-kate-teh-general-counsel.jpeg" alt="Kate Teh" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">GENERAL COUNSEL</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Kate Teh</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-arsany-thabet-md-innovo-solutions.jpeg" alt="Arsany Thabet" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">MD · INNOVO SOLUTIONS</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Arsany Thabet</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-rayan-el-eid-md-innovo-roads-infra.jpeg" alt="Rayan El Eid" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">MD · INNOVO INFRA</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Rayan El Eid</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-mohamed-gamal-md-innovo-build-egypt.jpeg" alt="Mohamad Gamal" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">MD · INNOVO BUILD EGYPT</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Mohamad Gamal</div></div></div></div>
+        <div class="card phrase" style="padding-top:12px;"><div style="display:flex;align-items:center;gap:10px;"><img src="extracted-images/leadership-khalid-sharbatly-md-innovo-mep.jpeg" alt="Khalid Sharbatly" style="width:90px;height:90px;object-fit:cover;object-position:center 10%;flex-shrink:0;border:1px solid rgba(8,145,178,0.3);border-radius:4px;"><div><div class="cid" style="font-size:9px;margin-bottom:4px;">MD · INNOVO MEP</div><div class="ctitle" style="font-size:14px;line-height:1.2;margin-bottom:0;">Khalid Sharbatly</div></div></div></div>
+      </div><!-- /leadership grid -->
     </div>
   </div>
 
   <!-- 05b MD WORD -->
   <div class="sec" id="s5md" data-label="Managing Director">
-    <div class="ini" style="max-width:1380px;width:100%;">
-      <div class="media" style="aspect-ratio:3/4;max-width:280px;max-height:55vh;align-self:center;">
-        <img src="extracted-images/rayan-el-eid-managing-director-portrait.jpeg" alt="Rayan El Eid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
+    <div style="display:flex;align-items:center;justify-content:center;gap:52px;width:100%;max-width:1260px;padding:0 16px;">
+      <div style="flex-shrink:0;position:relative;width:260px;height:360px;overflow:hidden;border:1px solid rgba(8,145,178,0.18);box-shadow:0 20px 60px -10px rgba(8,145,178,0.15);">
+        <img src="extracted-images/rayan-el-eid-managing-director-portrait.jpeg" alt="Rayan El Eid" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;">
         <div class="itag">MANAGING DIRECTOR · INNOVO INFRA</div>
       </div>
-      <div class="body-side phrase" style="display:flex;flex-direction:column;justify-content:center;gap:0;">
-        <div class="eyebrow" style="margin-bottom:20px;"><span class="el"></span><span>A Word From The Managing Director</span></div>
-        <div style="font-size:clamp(28px,3.5vw,52px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:28px;">Shaping the<br/><span class="aq" style="background:linear-gradient(135deg,#0891b2 0%,#0369a1 50%,#0891b2 100%);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s ease infinite;">Future of</span><br/>Infrastructure</div>
-        <div style="font-size:clamp(13px,1.05vw,16px);line-height:1.78;color:rgba(15,23,42,0.72);max-width:52ch;margin-bottom:28px;font-style:italic;border-left:3px solid var(--aqua);padding-left:20px;">"At Innovo, we don't just construct infrastructure – we engineer the backbone of modern connectivity and sustainable development. Our commitment to precision, innovation, and environmental responsibility ensures that every road, bridge, and marine structure we build enhances mobility, strengthens economies, and supports future growth. By leveraging cutting-edge technology and best practices, we deliver resilient infrastructure that meets today's needs while anticipating tomorrow's challenges."</div>
-        <div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;min-width:0;">
+        <div class="eyebrow phrase" style="margin-bottom:18px;"><span class="el"></span><span>A Word From The Managing Director</span></div>
+        <div class="phrase" style="font-size:clamp(22px,2.8vw,42px);font-weight:900;line-height:1.05;letter-spacing:-0.04em;text-transform:uppercase;margin-bottom:22px;white-space:nowrap;">Shaping the <span class="aq" style="background:linear-gradient(135deg,#0891b2 0%,#0369a1 50%,#0891b2 100%);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s ease infinite;">Future of</span> Infrastructure</div>
+        <div style="border-left:3px solid var(--aqua);padding-left:18px;margin-bottom:22px;">
+          <div id="md-quote" style="font-size:clamp(12px,0.95vw,15px);line-height:1.75;color:rgba(15,23,42,0.72);font-style:italic;min-height:3em;"></div>
+        </div>
+        <div class="phrase">
           <div style="font-weight:800;font-size:15px;letter-spacing:0.02em;color:var(--ink);">Rayan El Eid</div>
           <div class="cid" style="margin-top:4px;margin-bottom:0;">Managing Director · Innovo Infra</div>
         </div>
@@ -534,32 +542,32 @@ body{
       <div class="eyebrow"><span class="el"></span><span class="phrase">07 — Innovo Infra at a Glance</span><span class="el"></span></div>
       <div class="h2 phrase">The <span class="aq">numbers</span> speak.</div>
       <div class="b3">
-        <div class="b3i phrase"><div class="b3n">130+</div><div class="b3l">Ongoing Projects Globally</div></div>
+        <div class="b3i phrase"><div class="b3n">8</div><div class="b3l">Completed UAE Projects</div></div>
         <div class="b3i phrase"><div class="b3n">23+</div><div class="b3l">Active UAE Projects</div></div>
-        <div class="b3i phrase"><div class="b3n">AED 3B+</div><div class="b3l">UAE Infrastructure Value</div></div>
+        <div class="b3i phrase"><div class="b3n" style="white-space:nowrap;">AED 3B+</div><div class="b3l">UAE Infrastructure Value</div></div>
       </div>
     </div>
   </div>
 
-  <!-- DEPT TITLE: SECTORS -->
-  <div class="sec" id="s8" data-label="Sectors" data-dept="1">
+  <!-- DEPT TITLE: SERVICES + SECTORS OF EXPERTISE -->
+  <div class="sec" id="s13" data-label="Services" data-dept="2">
     <div class="col-c" style="position:relative;overflow:hidden;">
-      <div class="ghost">SECTORS</div>
-      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 01 / 04</span><span class="el"></span></div>
-      <div class="mega"><span class="phrase">Sectors of</span><br/><span class="phrase aq">Expertise</span></div>
-      <div class="mono" style="margin-top:18px;"><span class="phrase">Rayan El Eid · Managing Director</span></div>
+      <div class="ghost">SERVICES</div>
+      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 01–02 / 04</span><span class="el"></span></div>
+      <div class="mega"><span class="phrase">Our</span><br/><span class="phrase aq">Services</span></div>
+      <div class="mono" style="margin-top:18px;"><span class="phrase">Sectors of Expertise · Integrated Solutions · End-to-End Delivery</span></div>
     </div>
   </div>
 
-  <!-- 09 INFRASTRUCTURE & ROADS -->
+  <!-- 09 INFRASTRUCTURE & ROADS (Sectors of Expertise) -->
   <div class="sec" id="s9" data-label="Infrastructure & Roads">
     <div class="ini">
       <div class="media">
         <span class="itag">Sectors · 01</span>
-        <img src="extracted-images/sector-roads-roundabout-construction.jpeg" alt="Infrastructure & Roads"/>
+        <img src="extracted-images/sector-enabling-works-desert-earthworks.jpeg" alt="Infrastructure & Roads"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">01 / Sectors</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">01 / Sectors of Expertise</div>
         <div class="ititle phrase">Infrastructure &amp; Roads</div>
         <div class="idesc phrase">From engineering robust road networks to designing smart urban corridors — we combine cutting-edge technology, sustainable practices, and unparalleled expertise to shape connectivity and urban development across the UAE.</div>
         <div class="metrics phrase">
@@ -577,10 +585,10 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Sectors · 02</span>
-        <img src="extracted-images/sector-marine-works-aerial-view.jpeg" alt="Marine Works"/>
+        <img src="extracted-images/sector-infrastructure-utilities-site.jpeg" alt="Marine Works"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">02 / Sectors</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">02 / Sectors of Expertise</div>
         <div class="ititle phrase">Marine Works</div>
         <div class="idesc phrase">Innovative marine infrastructure including ports, harbors, and seawalls. Leveraging expertise in dredging, shoreline protection, and waterfront development — driving coastal resilience and sustainable economic growth.</div>
         <div class="metrics phrase">
@@ -599,7 +607,7 @@ body{
         <img src="extracted-images/sector-bridges-bridge-under-construction.jpeg" alt="Bridges and Structures"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">03 / Sectors</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">03 / Sectors of Expertise</div>
         <div class="ititle phrase">Bridges &amp; Structures</div>
         <div class="idesc phrase">From bridges and overpasses to underpasses and retaining walls — our expertise spans design and construction of critical structures. Unwavering focus on safety, precision and functionality ensures enduring engineering solutions.</div>
         <div class="metrics phrase">
@@ -618,7 +626,7 @@ body{
         <img src="extracted-images/sector-landscape-completed-streetscape.jpeg" alt="Landscape"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">04 / Sectors</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">04 / Sectors of Expertise</div>
         <div class="ititle phrase">Landscape &amp; Environment</div>
         <div class="idesc phrase">Blending functionality with natural beauty — irrigation systems, soil management, hard &amp; soft scaping, sport fields, waterscape, landscape lighting and cycle tracks. Projects that enhance biodiversity and create vibrant ecosystems.</div>
         <div class="metrics phrase">
@@ -629,25 +637,15 @@ body{
     </div>
   </div>
 
-  <!-- DEPT TITLE: SERVICES -->
-  <div class="sec" id="s13" data-label="Services" data-dept="2">
-    <div class="col-c" style="position:relative;overflow:hidden;">
-      <div class="ghost">SERVICES</div>
-      <div class="eyebrow"><span class="el"></span><span class="phrase">Division 02 / 04</span><span class="el"></span></div>
-      <div class="mega"><span class="phrase">Our</span><br/><span class="phrase aq">Services</span></div>
-      <div class="mono" style="margin-top:18px;"><span class="phrase">Integrated Solutions · End-to-End Delivery</span></div>
-    </div>
-  </div>
-
   <!-- 14 ENABLING WORKS -->
   <div class="sec" id="s14" data-label="Enabling Works">
     <div class="ini">
       <div class="media">
         <span class="itag">Services · 01</span>
-        <img src="extracted-images/service-enabling-works-grading-equipment-01.jpeg" alt="Enabling Works"/>
+        <img src="extracted-images/sector-roads-roundabout-construction.jpeg" alt="Enabling Works"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">01 / Services</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">01 / Services</div>
         <div class="ititle phrase">Enabling Works</div>
         <div class="idesc phrase">Site preparation, earthworks, grading, utility relocations and ground improvement — ensuring seamless project foundations while optimizing timelines and minimizing environmental impact. Multiple ground improvement techniques tailored to site requirements.</div>
         <div class="metrics phrase">
@@ -667,7 +665,7 @@ body{
         <img src="extracted-images/service-roadworks-completed-roundabout-aerial.jpeg" alt="Roadworks"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">02 / Services</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">02 / Services</div>
         <div class="ititle phrase">Roadworks</div>
         <div class="idesc phrase">Durable road networks and highways through advanced construction and maintenance solutions — highways &amp; main roads, soil improvement, pavement layers with strict quality control. Subgrade through to final asphalt with full traceability.</div>
         <div class="metrics phrase">
@@ -687,7 +685,7 @@ body{
         <img src="extracted-images/service-infrastructure-utilities-pipe-trench.jpeg" alt="Infrastructure & Utilities"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">03 / Services</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">03 / Services</div>
         <div class="ititle phrase">Infrastructure &amp; Utilities</div>
         <div class="idesc phrase">Critical infrastructure systems — wet utilities including sewer, stormwater, water supply, and dry utilities including electrical, street lighting, telecom. Using advanced technologies to ensure precision, reliability and resilience.</div>
         <div class="metrics phrase">
@@ -706,7 +704,7 @@ body{
         <img src="extracted-images/service-structure-works-bridge-aerial.jpeg" alt="Structures"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">04 / Services</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">04 / Services</div>
         <div class="ititle phrase">Structure Works</div>
         <div class="idesc phrase">Bridges, overpasses, underpasses and retaining walls — designed and constructed to the highest standards. Engineering solutions built to endure, with safety, precision and functionality at every step.</div>
         <div class="metrics phrase">
@@ -717,34 +715,15 @@ body{
     </div>
   </div>
 
-  <!-- 18 MARINE WORKS SERVICE -->
-  <div class="sec" id="s18" data-label="Marine Works Service">
-    <div class="ini">
-      <div class="media">
-        <span class="itag">Services · 05</span>
-        <img src="extracted-images/service-marine-works-rock-revetment-construction.jpeg" alt="Marine Works"/>
-      </div>
-      <div class="body-side">
-        <div class="inum phrase">05 / Services</div>
-        <div class="ititle phrase">Marine Works</div>
-        <div class="idesc phrase">Innovative marine infrastructure solutions — ports, harbors, seawalls, dredging, shoreline protection and waterfront development. Coastal resilience delivered through deep technical expertise and proven methodology.</div>
-        <div class="metrics phrase">
-          <div class="met"><div class="mk">Delivery</div><div class="mv">Ports &amp; Harbors</div></div>
-          <div class="met"><div class="mk">Specialty</div><div class="mv">Dredging &amp; Protection</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- 19 LANDSCAPING SERVICE -->
   <div class="sec" id="s19" data-label="Agriculture & Landscaping">
     <div class="ini r">
       <div class="media">
         <span class="itag">Services · 06</span>
-        <img src="extracted-images/service-landscape-park-shade-structure.jpeg" alt="Landscaping"/>
+        <img src="extracted-images/service-landscape-tree-roundabout.jpeg" alt="Landscaping"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">06 / Services</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">06 / Services</div>
         <div class="ititle phrase">Agriculture &amp; Landscaping</div>
         <div class="idesc phrase">Irrigation systems, soil management and sustainable landscaping including hard &amp; soft scaping, outdoor furniture, sport fields, waterscape, landscape lighting and jogging and cycle tracks — enhancing biodiversity and community wellbeing.</div>
         <div class="metrics phrase">
@@ -773,8 +752,8 @@ body{
         <img src="extracted-images/nursery-aerial-view-facility.jpeg" alt="In-House Nursery"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">01 / Nursery</div>
-        <div class="ititle phrase">Strategic Asset at Scale</div>
+        <div class="inum phrase" style="display:block;margin-bottom:18px;">01 / Nursery</div>
+        <div class="ititle phrase" style="display:block;">Strategic Asset at Scale</div>
         <div class="idesc phrase">Our plant nursery is a core strategic asset, purpose-built to deliver premium plant material at scale while upholding the highest standards of quality, reliability and environmental stewardship. Spanning over 50,000 m², the facility combines advanced horticultural expertise with modern infrastructure for consistent quality and long-term sustainability.</div>
         <div class="metrics phrase">
           <div class="met"><div class="mk">Facility Size</div><div class="mv">50,000 m²</div></div>
@@ -790,7 +769,7 @@ body{
   <div class="sec" id="s22" data-label="Nursery Capabilities">
     <div class="col-l">
       <div class="eyebrow"><span class="el"></span><span class="phrase">Nursery Capabilities</span></div>
-      <div class="h2 phrase fs-lg">Growing at <span class="aq">scale</span>.</div>
+      <div class="h2 phrase fs-lg" style="word-spacing:0.06em;letter-spacing:-0.02em;">Growing at <span class="aq">scale</span>.</div>
       <div class="sg">
         <div class="sc phrase"><div class="sn">50K</div><div class="sl">m² Facility Footprint</div></div>
         <div class="sc phrase"><div class="sn">25K</div><div class="sl">Trees in Open Fields</div></div>
@@ -819,7 +798,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Technology · 01</span>
-        <img src="extracted-images/tech-drone-survey-operator-road.jpeg" alt="Drone Surveys"/>
+        <img src="extracted-images/tech-cctv-robotic-pipe-inspection.jpeg" alt="Drone Surveys"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">01 / Technology</div>
@@ -839,7 +818,7 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Technology · 02</span>
-        <img src="extracted-images/tech-gpr-operator-scanning-ground.jpeg" alt="Ground Penetrating Radar"/>
+        <img src="extracted-images/tech-gpr-pipe-detection-equipment.jpeg" alt="Drone Survey — Ground Penetrating Radar"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">02 / Technology</div>
@@ -858,7 +837,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Technology · 03</span>
-        <img src="extracted-images/tech-cctv-robotic-pipe-inspection.jpeg" alt="CCTV Pipe Inspection"/>
+        <img src="extracted-images/tech-drone-survey-operator-road.jpeg" alt="CCTV Pipe Inspection"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">03 / Technology</div>
@@ -877,7 +856,7 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Technology · 04</span>
-        <img src="extracted-images/tech-laser-scanning-road-marking-vehicle.jpeg" alt="Laser Scanning"/>
+        <img src="extracted-images/tech-laser-scanning-road-marking-vehicle.jpeg" alt="CCTV Robotic Pipe Inspection"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">04 / Technology</div>
@@ -946,7 +925,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Project · 01</span>
-        <img src="extracted-images/project-eden-hills-villas-aerial-render.jpeg" alt="Eden Hills"/>
+        <img src="extracted-images/page33-extra-12.jpeg" alt="Eden Hills"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">01 / Ongoing</div>
@@ -966,11 +945,11 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Project · 02</span>
-        <img src="extracted-images/page33-extra-12.jpeg" alt="Dubai Master Developments"/>
+        <img src="extracted-images/project-eden-hills-villas-aerial-render.jpeg" alt="Dubai Master Developments"/>
       </div>
       <div class="body-side">
-        <div class="inum phrase">02 / Ongoing</div>
-        <div class="ititle phrase fs-sm">Dubai Master Developments — Haven, Athlon &amp; The Wilds</div>
+        <div class="inum phrase" style="display:block;margin-bottom:16px;">02 / Ongoing</div>
+        <div class="ititle phrase">Haven, Athlon &amp; The Wilds</div>
         <div class="idesc phrase">Three locations: site clearance (3,500,000 m²), enabling works of cut (2,100,000 m³) and fill (2,800,000 m³) to required levels, installation of hoarding fence (15,200 m).</div>
         <div class="metrics phrase">
           <div class="met"><div class="mk">Client</div><div class="mv">Aldar Projects</div></div>
@@ -987,7 +966,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Project · 03</span>
-        <img src="extracted-images/page34-extra-5.jpeg" alt="Ghaf Woods"/>
+        <img src="extracted-images/project-dubai-police-academy-aerial-render.jpeg" alt="Ghaf Woods"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">03 / Ongoing</div>
@@ -1007,7 +986,7 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Project · 04</span>
-        <img src="extracted-images/project-dubai-police-academy-aerial-render.jpeg" alt="Dubai Police Academy"/>
+        <img src="extracted-images/page34-extra-5.jpeg" alt="Dubai Police Academy"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">04 / Ongoing</div>
@@ -1027,7 +1006,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Project · 05</span>
-        <img src="extracted-images/project-saadiyat-lagoons-pkg3-aerial-render.png" alt="Saadiyat Lagoons"/>
+        <img src="extracted-images/page38-extra-3.jpeg" alt="Saadiyat Lagoons"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">05 / Ongoing</div>
@@ -1047,7 +1026,7 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Project · 06</span>
-        <img src="extracted-images/project-al-sader-housing-infrastructure-plan.jpeg" alt="Al Sader Housing"/>
+        <img src="extracted-images/page40-extra-6.jpeg" alt="Al Sader Housing"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">06 / Ongoing</div>
@@ -1068,7 +1047,7 @@ body{
     <div class="ini">
       <div class="media">
         <span class="itag">Project · 07</span>
-        <img src="extracted-images/project-north-al-bahia-residential-aerial-render.jpeg" alt="North Al Bahia"/>
+        <img src="extracted-images/page41-extra-3.jpeg" alt="North Al Bahia"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">07 / Ongoing</div>
@@ -1089,7 +1068,7 @@ body{
     <div class="ini r">
       <div class="media">
         <span class="itag">Project · 08</span>
-        <img src="extracted-images/project-junction-b-flood-protection-sharjah-map.png" alt="Flood Protection"/>
+        <img src="extracted-images/page37-extra-3.jpeg" alt="Flood Protection"/>
       </div>
       <div class="body-side">
         <div class="inum phrase">08 / Ongoing</div>
@@ -1110,37 +1089,76 @@ body{
     <div class="col-l">
       <div class="eyebrow"><span class="el"></span><span class="phrase">UAE Active Portfolio — Selected Projects</span></div>
       <div class="h2 phrase">What it's <span class="aq">worth</span>.</div>
-      <table class="vtbl phrase">
-        <thead><tr><th>PROJECT</th><th>CLIENT</th><th>VALUE</th></tr></thead>
-        <tbody>
-          <tr><td>Al Sader National Housing</td><td>Aldar Projects</td><td class="aq">AED 800M</td></tr>
-          <tr><td>North Al Bahia D&amp;B</td><td>Aldar Projects</td><td class="aq">AED 429M</td></tr>
-          <tr><td>Saadiyat Lagoons Pkg 3</td><td>Aldar Properties</td><td class="aq">AED 323M</td></tr>
-          <tr><td>Al Wiqan Roads &amp; Infrastructure</td><td>Aldar Projects</td><td class="aq">AED 198M</td></tr>
-          <tr><td>Ghaf Woods Infrastructure</td><td>Majed Al Futtaim</td><td class="aq">AED 180M</td></tr>
-          <tr><td>Dubai South Boulevard Roads</td><td>Dubai South</td><td class="aq">AED 165.5M</td></tr>
-          <tr><td>Eden Hills Villas Roads</td><td>Eden Hills LLC (H&H)</td><td class="aq">AED 134M</td></tr>
-          <tr><td>Dubai Police Academy</td><td>Dubai Police</td><td class="aq">AED 128M</td></tr>
-          <tr><td>D&amp;B Flood Protection Sharjah</td><td>Etihad Rail</td><td class="aq">AED 127.4M</td></tr>
-          <tr><td>Dubai Master Developments</td><td>Aldar Projects</td><td class="aq">AED 113M</td></tr>
-          <tr><td>Naseem Al Jurf Phase 3B</td><td>Imkan</td><td class="aq">AED 107M</td></tr>
-        </tbody>
-      </table>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 24px;width:100%;">
+        <table class="vtbl phrase" style="margin:0;">
+          <thead><tr><th>PROJECT</th><th>CLIENT</th><th>VALUE</th></tr></thead>
+          <tbody>
+            <tr><td>Al Sader Housing — Infrastructure</td><td>ALDAR Projects</td><td class="aq">AED 799.8M</td></tr>
+            <tr><td>North Al Bahia — Full Infra Package</td><td>ALDAR Projects</td><td class="aq">AED 429M</td></tr>
+            <tr><td>Saadiyat Lagoons — Package 3</td><td>Innovo Build / ALDAR</td><td class="aq">AED 323M</td></tr>
+            <tr><td>232 Residential Plots Infrastructure</td><td>ALDAR Projects</td><td class="aq">AED 197.5M</td></tr>
+            <tr><td>Dubai South — Roads &amp; Infrastructure</td><td>Dubai South</td><td class="aq">AED 167.5M</td></tr>
+            <tr><td>Ghaf Woods — Infrastructure &amp; Roads</td><td>MAF</td><td class="aq">AED 179.5M</td></tr>
+            <tr><td>Eden Hills Villas — Roads &amp; Utilities</td><td>H&amp;H</td><td class="aq">AED 134M</td></tr>
+            <tr><td>New Dubai Police Academy — Infrastructure</td><td>Dubai Police</td><td class="aq">AED 128M</td></tr>
+            <tr><td>Junction B Flood Protection (Sharjah)</td><td>Etihad Rail</td><td class="aq">AED 127.4M</td></tr>
+          </tbody>
+        </table>
+        <table class="vtbl phrase" style="margin:0;">
+          <thead><tr><th>PROJECT</th><th>CLIENT</th><th>VALUE</th></tr></thead>
+          <tbody>
+            <tr><td>Al Faya-Razeen-Al Qua'a Lighting Network</td><td>ALDAR Projects</td><td class="aq">AED 107.3M</td></tr>
+            <tr><td>Naseem Al Jurf Phase 3B</td><td>IMKAN</td><td class="aq">AED 107.5M</td></tr>
+            <tr><td>Dubai Master Developments — Enabling Works</td><td>ALDAR Properties</td><td class="aq">AED 113.3M</td></tr>
+            <tr><td>Bloom Living — Lake &amp; Landscape</td><td>Bloom Living</td><td class="aq">AED 86M</td></tr>
+            <tr><td>The Valley Mid Parcel — Deep Services</td><td>EMAAR</td><td class="aq">AED 78M</td></tr>
+            <tr><td>Prime Dubai — Enabling Works</td><td>ARM Holding</td><td class="aq">AED 58M</td></tr>
+            <tr><td>Shallow Services — Golf Lane (Emaar South)</td><td>EMAAR</td><td class="aq">AED 48.2M</td></tr>
+            <tr><td>Grand Polo Club Phase 1 — Deep Services</td><td>EMAAR</td><td class="aq">AED 38.5M</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 
   <!-- 40 COMPLETED PROJECTS -->
-  <div class="sec" id="s40" data-label="Completed Projects">
-    <div class="col-l">
-      <div class="eyebrow"><span class="el"></span><span class="phrase">Completed Projects — Selected</span></div>
-      <div class="h2 phrase">A track <span class="aq">record</span>.</div>
-      <div class="g3">
-        <div class="card phrase"><div class="cid">DUBAI HOLDING</div><div class="ctitle">Mudon Central Park Ph. 5&6</div><div class="cbody">Enabling, roads and infrastructure — earthworks, sewer, stormwater, irrigation, water, firefighting, street lighting, telecom and asphalt.<br/><span style="color:var(--aqua);font-weight:600;">AED 43 Million</span></div></div>
-        <div class="card phrase"><div class="cid">DUBAI HOLDING</div><div class="ctitle">Nad Al Sheba Gardens — F&G</div><div class="cbody">Full infrastructure including road network, stormwater, street lighting, potable water, sewerage, irrigation, firefighting, electrical and telecoms.<br/><span style="color:var(--aqua);font-weight:600;">AED 57 Million</span></div></div>
-        <div class="card phrase"><div class="cid">UK EXPORT FINANCE</div><div class="ctitle">Marsa Al Arab — Storm Water</div><div class="cbody">External storm water network and pump station — SWD lifting station, oil interceptor, HDPE pipe laying and outfall structure modification.<br/><span style="color:var(--aqua);font-weight:600;">AED 18.6 Million</span></div></div>
-        <div class="card phrase"><div class="cid">ALDAR · AL AIN</div><div class="ctitle">262 Residential Plots — Al Qou'a</div><div class="cbody">Full infrastructure for 262 residential plots in Al Qou'a — roads, streetscape, irrigation, potable water, stormwater, sewerage, power, lighting and telecoms.<br/><span style="color:var(--aqua);font-weight:600;">AED 64 Million</span></div></div>
-        <div class="card phrase"><div class="cid">ALDAR</div><div class="ctitle">Haven–Athlon–Wilds Enabling (D104)</div><div class="cbody">Site setup, clearing, removal of existing structures, excavation to reduce levels, and filling from imported materials in layers.<br/><span style="color:var(--aqua);font-weight:600;">AED 64 Million</span></div></div>
-        <div class="card phrase"><div class="cid">ALDAR · AL AIN</div><div class="ctitle">Al Faya Solar Street Lighting 125 km</div><div class="cbody">Upgrade of Al Faya–Razeen–Al Qua'a road with 2,222 solar street lights across a 125 km network.<br/><span style="color:var(--aqua);font-weight:600;">AED 78 Million</span></div></div>
+  <div class="sec" id="s40" data-label="Completed Projects" style="padding:40px 60px;flex-direction:column;align-items:center;justify-content:flex-start;">
+    <div style="width:100%;margin-bottom:16px;">
+      <div class="eyebrow phrase" style="text-align:center;"><span class="el"></span><span>Completed Projects — Selected</span><span class="el"></span></div>
+      <div class="h2 phrase" style="text-align:center;font-size:clamp(22px,2.8vw,44px);">A track <span class="aq">record</span>.</div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;width:100%;height:calc(100vh - 220px);gap:0;border:2px solid rgba(255,255,255,0.6);">
+      <div class="img-grid-card">
+        <img src="extracted-images/Mudon%20Central%20Park.jpeg" alt="Mudon Central Park">
+        <div class="img-grid-overlay">
+          <div class="cid">DUBAI HOLDING</div>
+          <div class="ctitle">Mudon Central Park Ph. 5&amp;6</div>
+          <div class="cbody">Enabling, roads and infrastructure — earthworks, sewer, stormwater, irrigation, water, firefighting, street lighting, telecom and asphalt.<br/><span style="color:var(--aqua);font-weight:600;">AED 43 Million</span></div>
+        </div>
+      </div>
+      <div class="img-grid-card">
+        <img src="extracted-images/Nad%20Al%20Sheba%20Gardens%20%E2%80%94%20F%26G.jpeg" alt="Nad Al Sheba Gardens">
+        <div class="img-grid-overlay">
+          <div class="cid">DUBAI HOLDING</div>
+          <div class="ctitle">Nad Al Sheba Gardens — F&amp;G</div>
+          <div class="cbody">Full infrastructure including road network, stormwater, street lighting, potable water, sewerage, irrigation, firefighting, electrical and telecoms.<br/><span style="color:var(--aqua);font-weight:600;">AED 57 Million</span></div>
+        </div>
+      </div>
+      <div class="img-grid-card">
+        <img src="extracted-images/Marsa%20Al%20Arab%20.jpeg" alt="Marsa Al Arab">
+        <div class="img-grid-overlay">
+          <div class="cid">UK EXPORT FINANCE</div>
+          <div class="ctitle">Marsa Al Arab — Storm Water</div>
+          <div class="cbody">External storm water network and pump station — SWD lifting station, oil interceptor, HDPE pipe laying and outfall structure modification.<br/><span style="color:var(--aqua);font-weight:600;">AED 18.6 Million</span></div>
+        </div>
+      </div>
+      <div class="img-grid-card">
+        <img src="extracted-images/Haven%E2%80%93Athlon%E2%80%93Wilds%20Enabling%20(D104).jpeg" alt="Haven Athlon Wilds">
+        <div class="img-grid-overlay">
+          <div class="cid">ALDAR</div>
+          <div class="ctitle">Haven–Athlon–Wilds Enabling (D104)</div>
+          <div class="cbody">Site setup, clearing, removal of existing structures, excavation to reduce levels, and filling from imported materials in layers.<br/><span style="color:var(--aqua);font-weight:600;">AED 64 Million</span></div>
+        </div>
       </div>
     </div>
   </div>
@@ -1153,10 +1171,10 @@ body{
       <div class="b3">
         <div class="b3i phrase"><div class="b3n">AED<br/>3B+</div><div class="b3l">Active UAE Infrastructure Portfolio</div></div>
         <div class="b3i phrase"><div class="b3n">23+</div><div class="b3l">UAE Active Projects</div></div>
-        <div class="b3i phrase"><div class="b3n">50K m²</div><div class="b3l">In-House Nursery Facility</div></div>
+        <div class="b3i phrase"><div class="b3n" style="white-space:nowrap;">50K m²</div><div class="b3l">In-House Nursery Facility</div></div>
       </div>
       <div class="pills phrase" style="margin-top:48px;">
-        <div class="pill">Top Employer UAE 2025</div>
+        <div class="pill">Top Employer UAE 2026</div>
         <div class="pill">ISO 9001:2015</div>
         <div class="pill">ISO 14001:2015</div>
         <div class="pill">ISO 45001:2018</div>
@@ -1169,12 +1187,10 @@ body{
   <!-- 42 THANK YOU -->
   <div class="sec" id="s42" data-label="Thank You">
     <div class="col-c">
-      <div class="eyebrow"><span class="el"></span><span class="phrase">END · 43 / 43</span><span class="el"></span></div>
       <div class="mega"><span class="phrase">Thank</span><br/><span class="aq phrase">You</span></div>
-      <div class="turl"><span class="phrase">innovogroup.com</span></div>
+      <div class="turl"><a href="https://www.innovogroup.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;"><span class="phrase">innovogroup.com</span></a></div>
       <div class="tloc">
-        <span class="phrase">DUBAI · ABU DHABI · LONDON · CAIRO</span><br/>
-        <span class="phrase">TORONTO · RIYADH · DAKAR · LUANDA</span>
+        <span class="phrase">DUBAI · ABU DHABI</span>
       </div>
     </div>
   </div>
@@ -1183,7 +1199,7 @@ body{
 
 <!-- FIXED UI -->
 <div class="hd">
-  <div class="hdb"><img src="extracted-images/innovo-logo-dark.png" alt="Innovo" style="height:36px;"></div>
+  <div class="hdb"><img src="INNOVO_Infra_Logo_PNG.png" alt="Innovo Infra" style="height:70px;"></div>
   <div class="hdr">
     <span id="secLabel">Cover</span>
     <div class="hpb"><div class="hpf" id="hpf"></div></div>
@@ -1192,7 +1208,7 @@ body{
 </div>
 <div class="ft">
   <div class="ftl">Innovo Infra · Company Profile 2026</div>
-  <div class="ftr">innovogroup.com</div>
+  <div class="ftr" style="pointer-events:auto;"><a href="https://www.innovogroup.com/" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;cursor:pointer;">innovogroup.com</a></div>
 </div>
 
 <script>
@@ -1398,6 +1414,27 @@ body{
     counters.forEach((d,el)=>{if(d.done)return;if((parseFloat(d.parent.style.opacity)||0)>.8){d.done=true;const t0=performance.now();(function step(now){const p=Math.min(1,(now-t0)/1200),v=Math.round((1-Math.pow(1-p,3))*d.target);el.textContent=d.prefix+v.toLocaleString()+d.suffix;if(p<1)requestAnimationFrame(step);})(t0);}});
   }
   setInterval(animateCounters,200);
+
+  // ── Typewriter: MD Quote ──
+  const mdQuoteEl=document.getElementById('md-quote');
+  const mdFullText='"At Innovo, we don\'t just construct infrastructure – we engineer the backbone of modern connectivity and sustainable development. Our commitment to precision, innovation, and environmental responsibility ensures that every road, bridge, and marine structure we build enhances mobility, strengthens economies, and supports future growth. By leveraging cutting-edge technology and best practices, we deliver resilient infrastructure that meets today\'s needs while anticipating tomorrow\'s challenges."';
+  let mdTyped=false,mdIdx=0;
+  function checkMD(){
+    const slide=document.getElementById('s5md');
+    if(!slide||mdTyped)return;
+    if((parseFloat(slide.style.opacity)||0)>0.7){
+      mdTyped=true;
+      mdQuoteEl.textContent='';
+      function typeChar(){
+        if(mdIdx<mdFullText.length){
+          mdQuoteEl.textContent+=mdFullText[mdIdx++];
+          setTimeout(typeChar,18);
+        }
+      }
+      typeChar();
+    }
+  }
+  setInterval(checkMD,150);
 })();
 </script>
 <script>
